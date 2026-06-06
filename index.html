@@ -1,0 +1,1391 @@
+<!--
+=================================================================
+WEBMIFY.SITE LIVE CHECKLIST (all links already wired)
+
+WhatsApp:  https://wa.link/5v3h95 (DONE)
+Telegram:  https://t.me/webmifystudio (DONE)
+Email:     webmifystudio@gmail.com (DONE)
+Instagram: https://instagram.com/webmify (DONE)
+LinkedIn:  https://linkedin.com/in/webmify (DONE)
+X:         https://twitter.com/Webmify (DONE)
+
+DEPLOYING TO VERCEL (step by step):
+1. Go to vercel.com - sign up free with your GitHub or Google account
+2. Click "Add New Project" then drag and drop this webmify.html file
+   OR: rename it index.html first then upload the folder
+3. Vercel gives you a free URL like webmify.vercel.app - test it
+4. In Vercel: Settings > Domains > Add "webmify.site"
+
+CONNECTING HOSTINGER DOMAIN TO VERCEL:
+5. Vercel will show you 2 DNS records to add - they look like:
+   Type: A  Name: @  Value: 76.76.21.21
+   Type: CNAME  Name: www  Value: cname.vercel-dns.com
+6. Go to hpanel.hostinger.com > Your domain > DNS/Nameservers > Edit
+7. Add those 2 records exactly as shown
+8. Wait 10 to 30 minutes - site goes live at webmify.site
+
+CALENDLY: replace "calendly.com/webmify/strategy-call" with your real link
+=================================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webmify   Own Your Space Online</title>
+<meta name="description" content="Webmify is a digital studio that builds websites, web apps, SaaS platforms, and mobile apps for founders and business owners worldwide.">
+<meta property="og:title" content="Webmify   Own Your Space Online">
+<meta property="og:description" content="Websites, web apps, SaaS platforms, and mobile apps. Fixed price. Real timeline. Full ownership.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://webmify.site">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Webmify   Own Your Space Online">
+<meta name="twitter:description" content="Websites, web apps, SaaS platforms, and mobile apps. Fixed price. Real timeline. Full ownership.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#f8f8f5;--bg2:#f1f1ec;--bg3:#e8e8e2;
+  --ink:#0c0c0a;--ink2:#1e1e1a;
+  --muted:#78786e;--muted2:#b4b4a8;
+  --border:#e0e0d8;--border2:#c8c8bc;
+  --gold:#b8944a;--red:#c44a2a;--green:#2d7a50;
+  --fd:'Cormorant Garamond',Georgia,serif;
+  --fb:'Geist',system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);overflow-x:hidden;cursor:none;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}ul{list-style:none;}
+button{cursor:none;font-family:var(--fb);border:none;background:none;}
+input,textarea,select{font-family:var(--fb);}
+.cdot{position:fixed;width:7px;height:7px;background:var(--ink);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+.cring{position:fixed;width:30px;height:30px;border:1px solid rgba(12,12,10,.28);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .22s var(--ease),height .22s var(--ease),border-color .22s;}
+body:has(a:hover) .cring,body:has(button:hover) .cring{width:46px;height:46px;border-color:rgba(12,12,10,.13);}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:rgba(248,248,245,.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
+.logo{font-family:var(--fb);font-size:18px;font-weight:600;letter-spacing:-.5px;display:flex;align-items:center;gap:4px;}
+.logo-mark{width:7px;height:7px;background:var(--gold);border-radius:50%;margin-bottom:1px;}
+.nmid{display:flex;align-items:center;gap:32px;}
+.nmid a{font-size:12.5px;font-weight:400;color:var(--muted);transition:color .2s;position:relative;}
+.nmid a:hover,.nmid a.act{color:var(--ink);}
+.nmid a.act::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--ink);}
+.nbtn{display:inline-flex;align-items:center;background:var(--ink);color:var(--bg);font-size:12px;font-weight:500;padding:9px 22px;border-radius:100px;letter-spacing:.1px;transition:transform .2s var(--ease),box-shadow .2s;}
+.nbtn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(12,12,10,.16);}
+.hbtn{display:none;flex-direction:column;gap:4px;padding:4px;cursor:none;}
+.hbtn span{display:block;width:18px;height:1.5px;background:var(--ink);}
+.mob{display:none;position:fixed;inset:0;background:var(--bg);z-index:280;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+.mob.open{display:flex;}
+.mob a{font-family:var(--fd);font-size:52px;font-weight:300;letter-spacing:-2px;color:var(--muted);transition:color .2s;}
+.mob a:hover{color:var(--ink);}
+.mob-x{position:absolute;top:18px;right:24px;font-size:22px;color:var(--muted);}
+.page{display:none;padding-top:60px;animation:pgIn .4s var(--ease) both;}
+.page.on{display:block;}
+@keyframes pgIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.w{max-width:1140px;margin:0 auto;padding:0 52px;}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .65s var(--ease),transform .65s var(--ease);}
+.rv.vis{opacity:1;transform:translateY(0);}
+.btn{display:inline-flex;align-items:center;font-size:13px;font-weight:500;padding:12px 26px;border-radius:100px;border:none;cursor:none;transition:transform .2s var(--ease),box-shadow .2s;letter-spacing:.05px;}
+.btn-k{background:var(--ink);color:var(--bg);}
+.btn-k:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(12,12,10,.18);}
+.btn-o{background:transparent;color:var(--ink);border:1px solid var(--border2);}
+.btn-o:hover{border-color:var(--ink);background:var(--bg2);}
+.btn-sm{padding:8px 18px;font-size:11.5px;}
+.ey{display:flex;align-items:center;gap:9px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:18px;}
+.ey::before{content:'';width:14px;height:1px;background:var(--muted2);}
+.hr{height:1px;background:var(--border);}
+.hero{padding:108px 52px 72px;max-width:1140px;margin:0 auto;}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:10.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:36px;animation:pgIn .6s var(--ease) both;}
+.hero-kicker::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;animation:pk 2.5s ease-in-out infinite;}
+@keyframes pk{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.6);}}
+.hero-h{font-family:var(--fd);font-size:clamp(68px,9vw,124px);font-weight:300;letter-spacing:-5px;line-height:.9;margin-bottom:48px;animation:pgIn .65s var(--ease) .06s both;}
+.hero-h b{font-weight:600;display:block;}
+.hero-h em{font-style:italic;color:var(--muted);display:block;}
+.hero-row{display:flex;align-items:flex-end;gap:64px;animation:pgIn .65s var(--ease) .13s both;}
+.hero-sub{font-size:15px;font-weight:300;color:var(--muted);line-height:1.85;max-width:400px;}
+.hero-sub strong{color:var(--ink);font-weight:500;}
+.hero-btns{display:flex;gap:10px;flex-shrink:0;}
+.mq-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 0;display:flex;align-items:center;gap:40px;}
+.mq-label{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);white-space:nowrap;flex-shrink:0;padding-left:52px;}
+.mq-track{overflow:hidden;flex:1;}
+.mq-inner{display:flex;animation:mq 28s linear infinite;}
+.mq-g{display:flex;flex-shrink:0;}
+.mq-i{padding:0 24px;font-size:10.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);white-space:nowrap;}
+.mq-sep{opacity:.4;padding:0 4px;}
+@keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.fsec{padding:96px 0;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.sh{font-family:var(--fd);font-size:clamp(38px,4.5vw,60px);font-weight:300;letter-spacing:-2.5px;line-height:1.05;margin-bottom:22px;}
+.sh em{font-style:italic;color:var(--muted);}
+.sp{font-size:13.5px;font-weight:300;color:var(--muted);line-height:1.9;margin-bottom:26px;}
+.pillars{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.pillar{display:flex;gap:16px;padding:26px 28px;border-bottom:1px solid var(--border);background:var(--bg);transition:background .2s;}
+.pillar:last-child{border-bottom:none;}
+.pillar:hover{background:var(--bg2);}
+.pillar-ico{width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--bg3);border-radius:8px;flex-shrink:0;margin-top:1px;}
+.pillar-t{font-size:13.5px;font-weight:500;letter-spacing:-.2px;margin-bottom:3px;}
+.pillar-d{font-size:12.5px;color:var(--muted);line-height:1.7;font-weight:300;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:72px;}
+.stat{padding:32px 26px;border-right:1px solid var(--border);}
+.stat:last-child{border-right:none;}
+.sn{font-family:var(--fd);font-size:52px;font-weight:300;letter-spacing:-2px;line-height:1;display:block;}
+.sl{font-size:11px;color:var(--muted);margin-top:6px;letter-spacing:.3px;display:block;}
+.demos{padding:0 0 96px;}
+.demo-tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:20px;}
+.dtab{flex:1;padding:13px 14px;font-size:11.5px;font-weight:500;color:var(--muted);background:var(--bg);border-right:1px solid var(--border);cursor:none;transition:background .2s,color .2s;text-align:center;}
+.dtab:last-child{border-right:none;}
+.dtab:hover{background:var(--bg2);}
+.dtab.active{background:var(--ink);color:var(--bg);}
+.demo-stage{border:1px solid var(--border);border-radius:14px;overflow:hidden;height:520px;position:relative;background:var(--bg2);}
+.demo-panel{display:none;position:absolute;inset:0;}
+.demo-panel.active{display:flex;}
+.dp-land{flex-direction:column;background:linear-gradient(150deg,#09091a 0%,#14102e 100%);}
+.dl-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;border-bottom:1px solid rgba(255,255,255,.06);}
+.dl-logo{font-size:14px;font-weight:600;color:#fff;letter-spacing:-.3px;}
+.dl-links{display:flex;gap:20px;}
+.dl-links span{font-size:11px;color:rgba(255,255,255,.35);}
+.dl-btn{font-size:10.5px;font-weight:500;padding:6px 15px;border-radius:100px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12);}
+.dl-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;text-align:center;}
+.dl-badge{font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(180,220,255,.65);border:1px solid rgba(180,220,255,.14);padding:4px 14px;border-radius:100px;margin-bottom:20px;}
+.dl-title{font-family:var(--fd);font-size:clamp(28px,5vw,58px);font-weight:300;letter-spacing:-2.5px;line-height:.94;color:#fff;margin-bottom:14px;}
+.dl-title em{font-style:italic;color:rgba(255,255,255,.38);}
+.dl-sub{font-size:12.5px;color:rgba(255,255,255,.4);max-width:320px;line-height:1.75;margin-bottom:26px;font-weight:300;}
+.dl-ctas{display:flex;gap:10px;justify-content:center;}
+.dl-c1{font-size:11.5px;font-weight:500;padding:10px 22px;border-radius:100px;background:#e8ff47;color:#09091a;}
+.dl-c2{font-size:11.5px;padding:10px 18px;border-radius:100px;border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.65);}
+.dl-logos{display:flex;gap:20px;align-items:center;margin-top:32px;opacity:.28;}
+.dl-logo-item{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;}
+.dp-dash{background:#f9f9f7;flex-direction:row;}
+.d-side{width:176px;background:#fff;border-right:1px solid var(--border);display:flex;flex-direction:column;padding:14px 0;flex-shrink:0;}
+.d-slogo{padding:6px 16px 14px;font-size:13px;font-weight:600;letter-spacing:-.3px;border-bottom:1px solid var(--border);margin-bottom:6px;}
+.d-sitem{display:flex;align-items:center;gap:8px;padding:7px 16px;font-size:11px;color:var(--muted);cursor:none;transition:background .15s;}
+.d-sitem:hover,.d-sitem.act{background:var(--bg2);color:var(--ink);font-weight:500;}
+.d-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.c-b{background:#3b82f6;}.c-g{background:#22c55e;}.c-a{background:#f59e0b;}.c-p{background:#8b5cf6;}.c-x{background:var(--muted2);}
+.d-main{flex:1;overflow:hidden;padding:18px;}
+.d-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.d-title{font-size:13px;font-weight:600;letter-spacing:-.2px;}
+.d-badge{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:100px;background:#dcfce7;color:#166534;}
+.d-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px;}
+.dc{background:#fff;border:1px solid var(--border);border-radius:9px;padding:12px;}
+.dc-l{font-size:9px;color:var(--muted);letter-spacing:.5px;margin-bottom:5px;text-transform:uppercase;}
+.dc-n{font-size:19px;font-weight:600;letter-spacing:-.8px;}
+.dc-ch{font-size:9px;margin-top:2px;}
+.up{color:#16a34a;}.dn{color:#dc2626;}
+.d-chart{background:#fff;border:1px solid var(--border);border-radius:9px;padding:12px;margin-bottom:10px;}
+.d-cl{font-size:9px;color:var(--muted);margin-bottom:8px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;}
+.d-bars{display:flex;align-items:flex-end;gap:5px;height:65px;}
+.bar{border-radius:3px 3px 0 0;flex:1;}
+.d-table{background:#fff;border:1px solid var(--border);border-radius:9px;overflow:hidden;}
+.d-th{display:grid;grid-template-columns:1fr 72px 64px 68px;padding:7px 12px;background:var(--bg2);border-bottom:1px solid var(--border);}
+.d-th span,.d-tr span{font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);font-weight:500;}
+.d-tr{display:grid;grid-template-columns:1fr 72px 64px 68px;padding:7px 12px;border-bottom:1px solid var(--border);align-items:center;}
+.d-tr:last-child{border-bottom:none;}
+.d-name{font-size:11px;font-weight:500;}
+.d-st{font-size:9px;font-weight:600;padding:2px 8px;border-radius:100px;}
+.st-live{background:#dcfce7;color:#166534;}.st-pend{background:#fef9c3;color:#854d0e;}
+.dp-ec{background:#fff;flex-direction:column;}
+.ec-nav{display:flex;align-items:center;justify-content:space-between;padding:12px 22px;border-bottom:1px solid var(--border);}
+.ec-logo{font-size:13px;font-weight:700;letter-spacing:-.4px;}
+.ec-cats{display:flex;gap:18px;}
+.ec-cats span{font-size:11px;color:var(--muted);}
+.ec-cart{font-size:11px;font-weight:500;padding:6px 14px;border-radius:100px;border:1px solid var(--border2);}
+.ec-body{display:flex;flex:1;overflow:hidden;}
+.ec-fil{width:150px;border-right:1px solid var(--border);padding:14px;flex-shrink:0;}
+.ec-ft{font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.ec-fi{display:flex;align-items:center;gap:7px;margin-bottom:7px;font-size:11px;color:var(--muted);}
+.ec-fb{width:11px;height:11px;border:1px solid var(--border2);border-radius:3px;flex-shrink:0;}
+.ec-fb.ck{background:var(--ink);border-color:var(--ink);}
+.ec-prods{flex:1;padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-content:start;}
+.ec-p{border:1px solid var(--border);border-radius:9px;overflow:hidden;background:var(--bg);}
+.ec-img{height:88px;display:flex;align-items:center;justify-content:center;background:var(--bg2);}
+.ec-info{padding:9px;}
+.ec-pn{font-size:11px;font-weight:500;margin-bottom:2px;}
+.ec-pr{font-size:10.5px;color:var(--muted);}
+.ec-add{margin-top:6px;width:100%;font-size:9.5px;font-weight:500;padding:5px;background:var(--ink);color:var(--bg);border-radius:6px;border:none;cursor:none;}
+.dp-app{background:#f8f8f5;flex-direction:column;}
+.app-bar{display:flex;border-bottom:1px solid var(--border);background:#fff;}
+.app-tab{padding:11px 18px;font-size:11px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;cursor:none;}
+.app-tab.act{color:var(--ink);border-bottom-color:var(--ink);}
+.app-body{display:flex;flex:1;overflow:hidden;}
+.app-side{width:210px;background:#fff;border-right:1px solid var(--border);padding:14px;flex-shrink:0;}
+.app-st{font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.app-si{display:flex;align-items:center;justify-content:space-between;padding:7px 9px;border-radius:7px;cursor:none;transition:background .15s;}
+.app-si:hover,.app-si.act{background:var(--bg2);}
+.app-sin{font-size:11.5px;font-weight:500;}
+.app-sct{font-size:10px;padding:2px 8px;border-radius:100px;background:var(--bg3);color:var(--muted);}
+.app-main{flex:1;padding:18px;overflow:hidden;}
+.app-mh{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.app-mt{font-size:13px;font-weight:600;letter-spacing:-.2px;}
+.app-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+.as{background:#fff;border:1px solid var(--border);border-radius:9px;padding:12px;}
+.as-n{font-size:22px;font-weight:600;letter-spacing:-.8px;margin-top:4px;}
+.as-l{font-size:10px;color:var(--muted);}
+.app-rows{display:flex;flex-direction:column;gap:7px;}
+.app-row{background:#fff;border:1px solid var(--border);border-radius:9px;padding:12px;display:flex;align-items:center;gap:10px;}
+.ar-av{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+.ar-n{font-size:11.5px;font-weight:500;margin-bottom:1px;}
+.ar-s{font-size:10.5px;color:var(--muted);}
+.ar-b{font-size:9px;font-weight:600;padding:2px 8px;border-radius:100px;margin-left:auto;}
+.b-active{background:#dcfce7;color:#166534;}.b-pending{background:#fef3c7;color:#92400e;}
+.dp-mob{background:linear-gradient(135deg,#181828,#1a1535);align-items:center;justify-content:center;gap:40px;padding:24px;}
+.phone{width:186px;height:370px;background:#fff;border-radius:30px;overflow:hidden;border:6px solid #12121f;box-shadow:0 28px 64px rgba(0,0,0,.55);display:flex;flex-direction:column;flex-shrink:0;}
+.ph-status{background:#12121f;padding:7px 16px;display:flex;justify-content:space-between;align-items:center;}
+.ph-time{font-size:9px;font-weight:600;color:#fff;}
+.ph-si-wrap{display:flex;gap:3px;align-items:center;}
+.ph-si{width:4px;height:4px;background:rgba(255,255,255,.55);border-radius:50%;}
+.ph-screen{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative;}
+.mob-screen{position:absolute;inset:0;display:flex;flex-direction:column;transition:opacity .3s var(--ease),transform .3s var(--ease);}
+.mob-screen.ms-on{opacity:1;transform:translateX(0);pointer-events:auto;}
+.mob-screen.ms-left{opacity:0;transform:translateX(-18px);pointer-events:none;}
+.mob-screen.ms-right{opacity:0;transform:translateX(18px);pointer-events:none;}
+.ms-home-top{padding:14px 14px 10px;background:linear-gradient(135deg,#181828,#1a1535);color:#fff;}
+.ms-ht-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.ms-ht-label{font-size:8.5px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.5);}
+.ms-ht-av{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff;}
+.ms-bal{font-size:26px;font-weight:700;letter-spacing:-1.5px;color:#fff;}
+.ms-bsub{font-size:8.5px;color:rgba(255,255,255,.45);margin-top:1px;}
+.ms-quick{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:10px 14px;border-bottom:1px solid var(--border);}
+.ms-qi{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:none;}
+.ms-qi-btn{width:30px;height:30px;border-radius:8px;background:var(--bg2);display:flex;align-items:center;justify-content:center;transition:background .15s;}
+.ms-qi:hover .ms-qi-btn{background:var(--bg3);}
+.ms-qi-l{font-size:7px;color:var(--muted);text-align:center;}
+.ms-list{padding:10px 14px;display:flex;flex-direction:column;gap:6px;overflow-y:auto;flex:1;}
+.ms-list-title{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+.ms-item{display:flex;align-items:center;gap:8px;padding:7px 9px;background:var(--bg);border-radius:8px;border:1px solid var(--border);cursor:none;}
+.ms-item-ico{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ms-item-n{font-size:9.5px;font-weight:500;}
+.ms-item-d{font-size:8.5px;color:var(--muted);}
+.ms-item-amt{font-size:9.5px;font-weight:600;margin-left:auto;}
+.ms-bnav{display:flex;border-top:1px solid var(--border);background:#fff;}
+.ms-bni{flex:1;display:flex;flex-direction:column;align-items:center;padding:7px 4px;gap:2px;cursor:none;}
+.ms-bni-l{font-size:7px;color:var(--muted);}
+.ms-bni.act .ms-bni-l{color:var(--ink);font-weight:600;}
+.ms-send-wrap{background:#fff;padding:16px;display:flex;flex-direction:column;gap:10px;flex:1;}
+.ms-send-h{font-size:12px;font-weight:600;letter-spacing:-.3px;}
+.ms-contact{display:flex;align-items:center;gap:9px;padding:9px;background:var(--bg2);border-radius:9px;border:1px solid var(--border);cursor:none;}
+.ms-c-av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;}
+.ms-c-name{font-size:11px;font-weight:500;}
+.ms-c-info{font-size:9.5px;color:var(--muted);}
+.ms-amount-wrap{background:var(--bg2);border-radius:10px;padding:12px;text-align:center;}
+.ms-amt-label{font-size:9px;color:var(--muted);margin-bottom:4px;}
+.ms-amt{font-size:28px;font-weight:700;letter-spacing:-2px;}
+.ms-send-btn{width:100%;background:var(--ink);color:var(--bg);font-size:12px;font-weight:500;padding:11px;border-radius:9px;border:none;cursor:none;}
+.ms-cards-wrap{padding:16px;background:#fff;flex:1;}
+.ms-cs-h{font-size:12px;font-weight:600;letter-spacing:-.3px;margin-bottom:12px;}
+.ms-card-visual{height:90px;border-radius:12px;background:linear-gradient(135deg,#181828,#1a1535);padding:12px;display:flex;flex-direction:column;justify-content:space-between;margin-bottom:10px;}
+.ms-cv-top{display:flex;justify-content:space-between;}
+.ms-cv-name{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.6);}
+.ms-cv-chip{width:18px;height:14px;border-radius:3px;background:rgba(255,255,255,.2);}
+.ms-cv-num{font-size:10px;color:rgba(255,255,255,.7);letter-spacing:1px;}
+.ms-cv-holder{font-size:9px;color:rgba(255,255,255,.5);}
+.ms-c-row{display:flex;justify-content:space-between;font-size:10.5px;padding:7px 0;border-bottom:1px solid var(--border);}
+.ms-c-l{color:var(--muted);}
+.ms-c-v{font-weight:500;}
+.ms-back-row{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--border);background:#fff;}
+.ms-back-btn{background:none;border:none;cursor:none;color:var(--muted);display:flex;align-items:center;}
+.ms-screen-title{font-size:12px;font-weight:600;letter-spacing:-.2px;}
+.mob-info{color:rgba(255,255,255,.7);max-width:200px;}
+.mob-info-title{font-family:var(--fd);font-size:24px;font-weight:300;letter-spacing:-1.2px;color:#fff;margin-bottom:8px;}
+.mob-info-sub{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.75;font-weight:300;}
+.mob-nav-btns{display:flex;flex-direction:column;gap:7px;margin-top:18px;}
+.mnb{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.65);font-size:11px;font-weight:500;padding:8px 16px;border-radius:100px;cursor:none;text-align:left;transition:background .2s;}
+.mnb.act{background:rgba(255,255,255,.16);color:#fff;}
+.mnb:hover{background:rgba(255,255,255,.12);}
+.smodal{display:none;position:fixed;inset:0;z-index:400;background:rgba(12,12,10,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);align-items:flex-end;justify-content:center;padding:20px;}
+.smodal.open{display:flex;}
+.smodal-box{background:var(--bg);border-radius:20px 20px 0 0;width:100%;max-width:800px;max-height:88vh;overflow-y:auto;animation:slideUp .4s var(--ease) both;}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+.sm-header{padding:32px 40px 24px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:20px;position:sticky;top:0;background:var(--bg);z-index:1;}
+.sm-close{width:32px;height:32px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;cursor:none;flex-shrink:0;transition:background .2s;}
+.sm-close:hover{background:var(--bg3);}
+.sm-h{font-family:var(--fd);font-size:36px;font-weight:300;letter-spacing:-1.5px;line-height:1.1;}
+.sm-sub{font-size:13px;color:var(--muted);font-weight:300;margin-top:4px;}
+.sm-body{padding:32px 40px 40px;}
+.sm-section{margin-bottom:36px;}
+.sm-section-h{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.sm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.sm-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;}
+.sm-card-h{font-size:13.5px;font-weight:500;letter-spacing:-.2px;margin-bottom:6px;}
+.sm-card-d{font-size:12.5px;color:var(--muted);line-height:1.7;font-weight:300;}
+.sm-consider{display:flex;flex-direction:column;gap:10px;}
+.sm-c-item{display:flex;gap:12px;align-items:flex-start;padding:14px;background:var(--bg2);border-radius:10px;border:1px solid var(--border);}
+.sm-c-num{font-family:var(--fd);font-size:18px;font-weight:300;color:var(--muted2);min-width:20px;}
+.sm-c-t{font-size:13px;font-weight:500;margin-bottom:3px;}
+.sm-c-d{font-size:12px;color:var(--muted);line-height:1.65;font-weight:300;}
+.sm-cta{background:var(--ink);color:var(--bg);font-size:13px;font-weight:500;padding:14px;border-radius:10px;border:none;cursor:none;width:100%;transition:transform .2s,box-shadow .2s;}
+.sm-cta:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(12,12,10,.15);}
+.srv-hero-h{font-family:var(--fd);font-size:clamp(52px,7vw,100px);font-weight:300;letter-spacing:-4px;line-height:.91;margin-bottom:26px;}
+.srv-intro{font-size:14.5px;color:var(--muted);max-width:480px;line-height:1.85;font-weight:300;}
+.srv-list{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:52px;}
+
+.srv-item{border-bottom:1px solid var(--border);background:var(--bg);transition:background .2s;}
+.srv-cat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;margin-right:8px;vertical-align:middle;}
+.srv-code-wrap{display:flex;align-items:center;margin-bottom:16px;}
+.srv-actions{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap;}
+
+
+/* service colour accents */
+.srv-item[data-cat="web"]:hover{background:rgba(232,255,71,.02);}
+.srv-item[data-cat="ecom"]:hover{background:rgba(99,200,130,.02);}
+.srv-item[data-cat="app"]:hover{background:rgba(99,140,255,.02);}
+.srv-item[data-cat="content"]:hover{background:rgba(255,150,99,.02);}
+.srv-item[data-cat="design"]:hover{background:rgba(200,100,255,.02);}
+.dot-web{background:#b8c830;}.dot-ecom{background:#2da874;}.dot-app{background:#4a7fff;}
+.dot-content{background:#e07a3a;}.dot-design{background:#9b50e0;}.dot-mobile{background:#e05080;}.dot-ai{background:#50b8e0;}
+
+
+
+
+
+
+
+
+.sample-caption strong{color:var(--ink);font-weight:500;}
+@media(max-width:640px){.srv-actions{flex-direction:column;}}
+
+.srv-item:last-child{border-bottom:none;}
+.srv-item:hover{background:var(--bg2);}
+.srv-top{display:grid;grid-template-columns:1fr auto;}
+.srv-l{padding:38px 42px;}
+.srv-code{font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted2);margin-bottom:16px;}
+.srv-name{font-family:var(--fd);font-size:32px;font-weight:400;letter-spacing:-1.5px;margin-bottom:10px;}
+.srv-desc{font-size:13px;color:var(--muted);line-height:1.85;font-weight:300;max-width:500px;margin-bottom:16px;}
+.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{font-size:9.5px;font-weight:500;padding:4px 11px;border-radius:100px;border:1px solid var(--border2);color:var(--muted);background:var(--bg);}
+.srv-r{padding:38px 42px;border-left:1px solid var(--border);min-width:185px;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;}
+.srv-pl{font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);margin-bottom:3px;}
+.srv-price{font-family:var(--fd);font-size:38px;font-weight:400;letter-spacing:-2px;}
+.srv-time{font-size:11px;color:var(--muted);margin-top:3px;}
+.proc-list{display:flex;flex-direction:column;margin-top:48px;}
+.proc{display:grid;grid-template-columns:52px 1fr;gap:0;padding:34px 0;border-bottom:1px solid var(--border);transition:padding-left .3s var(--ease);}
+.proc:first-child{padding-top:0;}
+.proc:last-child{border-bottom:none;}
+.proc:hover{padding-left:8px;}
+.pn{font-family:var(--fd);font-size:46px;font-weight:300;letter-spacing:-3px;color:var(--muted2);line-height:1;}
+.pt{font-size:14px;font-weight:500;letter-spacing:-.2px;margin-bottom:6px;margin-top:4px;}
+.pd{font-size:13px;color:var(--muted);line-height:1.8;font-weight:300;}
+.pday{display:inline-block;margin-top:8px;font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);}
+.about-h{font-family:var(--fd);font-size:clamp(52px,7vw,100px);font-weight:300;letter-spacing:-4px;line-height:.91;}
+.about-h em{font-style:italic;color:var(--muted);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;padding:64px 0 0;align-items:start;}
+
+
+
+
+
+
+
+
+.about-text .ap{font-size:13.5px;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:16px;}
+.about-text .ap strong{color:var(--ink);font-weight:500;}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:32px;}
+.team-card{border:1px solid var(--border);border-radius:10px;padding:18px;background:var(--bg);}
+.tc-role{font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);margin-bottom:6px;}
+.tc-title{font-size:13.5px;font-weight:500;letter-spacing:-.2px;margin-bottom:4px;}
+.tc-desc{font-size:11.5px;color:var(--muted);line-height:1.65;font-weight:300;}
+.ventures{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px;}
+.vent{border:1px solid var(--border);border-radius:12px;padding:30px;transition:border-color .2s,transform .25s var(--ease);}
+.vent:hover{border-color:var(--ink);transform:translateY(-3px);}
+.vl{font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);margin-bottom:10px;}
+.vn{font-family:var(--fd);font-size:24px;font-weight:400;letter-spacing:-1px;margin-bottom:7px;}
+.vd{font-size:12.5px;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:16px;}
+.vbadge{display:inline-flex;align-items:center;gap:5px;font-size:9.5px;font-weight:600;padding:4px 11px;border-radius:100px;border:1px solid;}
+.vbl{color:#166534;border-color:#bbf7d0;background:#f0fdf4;}
+.vbs{color:#92400e;border-color:#fed7aa;background:#fff7ed;}
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:40px;}
+.val{border-top:1px solid var(--border);padding-top:18px;transition:border-color .2s;}
+.val:hover{border-color:var(--ink);}
+.vnum{font-family:var(--fd);font-size:40px;font-weight:300;color:var(--muted2);letter-spacing:-2px;margin-bottom:8px;}
+.vt{font-size:13px;font-weight:500;margin-bottom:4px;}
+.vd2{font-size:11.5px;color:var(--muted);line-height:1.7;font-weight:300;}
+.blog-h{font-family:var(--fd);font-size:clamp(52px,7vw,100px);font-weight:300;letter-spacing:-4px;line-height:.91;margin-bottom:14px;}
+.blog-intro{font-size:14px;color:var(--muted);font-weight:300;max-width:440px;line-height:1.85;}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px;}
+.post{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--bg);transition:border-color .25s,transform .3s var(--ease);cursor:none;display:flex;flex-direction:column;}
+.post:hover{border-color:var(--ink);transform:translateY(-5px);}
+.pthumb{height:166px;display:flex;align-items:center;justify-content:center;}
+.pt1{background:linear-gradient(135deg,#ede8de,#e0d8c8);}
+.pt2{background:linear-gradient(135deg,#dde8de,#ccdacc);}
+.pt3{background:linear-gradient(135deg,#e4dde8,#d4cce0);}
+.pbody{padding:22px;flex:1;display:flex;flex-direction:column;}
+.pmeta{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.pcat{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border2);padding:3px 9px;border-radius:100px;}
+.pdate{font-size:10.5px;color:var(--muted2);}
+.ptitle{font-family:var(--fd);font-size:21px;font-weight:400;letter-spacing:-.8px;line-height:1.2;margin-bottom:9px;}
+.pex{font-size:12.5px;color:var(--muted);line-height:1.75;font-weight:300;flex:1;}
+.pfoot{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px solid var(--border);}
+.pby{font-size:10.5px;color:var(--muted);}
+.pread{font-size:10.5px;color:var(--ink);font-weight:500;}
+.nl{margin-top:52px;border:1px solid var(--border);border-radius:14px;padding:46px;background:var(--bg2);display:flex;align-items:center;gap:40px;}
+.nl-t{flex:1;}
+.nl-title{font-family:var(--fd);font-size:28px;font-weight:300;letter-spacing:-1.5px;margin-bottom:4px;}
+.nl-sub{font-size:13px;color:var(--muted);font-weight:300;}
+.nl-form{display:flex;gap:8px;flex-shrink:0;}
+.nl-in{background:var(--bg);border:1px solid var(--border2);color:var(--ink);font-size:13px;padding:11px 18px;border-radius:100px;width:220px;outline:none;transition:border-color .2s;}
+.nl-in::placeholder{color:var(--muted2);}
+.nl-in:focus{border-color:var(--ink);}
+.contact-h{font-family:var(--fd);font-size:clamp(52px,7vw,100px);font-weight:300;letter-spacing:-4px;line-height:.91;margin-bottom:12px;}
+.contact-sub{font-size:14.5px;color:var(--muted);font-weight:300;max-width:440px;line-height:1.85;margin-bottom:52px;}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;padding-bottom:96px;}
+.cms{display:flex;flex-direction:column;gap:9px;}
+.cm{display:flex;align-items:center;gap:13px;padding:15px 17px;border:1px solid var(--border);border-radius:10px;background:var(--bg);transition:border-color .2s;}
+.cm:hover{border-color:var(--ink);}
+.cm-ico{width:33px;height:33px;background:var(--bg2);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cm-lbl{font-size:9.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted2);margin-bottom:1px;}
+.cm-val{font-size:12.5px;font-weight:500;}
+.avail{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--muted);margin-top:18px;}
+.av-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pk 2.5s ease-in-out infinite;flex-shrink:0;}
+.cform{border:1px solid var(--border);border-radius:14px;padding:38px;background:var(--bg);}
+.cform-h{font-family:var(--fd);font-size:22px;font-weight:400;letter-spacing:-.8px;margin-bottom:22px;}
+.fl{margin-bottom:13px;}
+.fl label{display:block;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.fi,.fsel,.fta{width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--ink);font-size:12.5px;padding:11px 14px;border-radius:8px;outline:none;transition:border-color .2s;-webkit-appearance:none;}
+.fi::placeholder,.fta::placeholder{color:var(--muted2);}
+.fi:focus,.fsel:focus,.fta:focus{border-color:var(--ink);}
+.fta{resize:vertical;min-height:96px;line-height:1.65;}
+.fsel option{background:var(--bg);}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.fsub{width:100%;background:var(--ink);color:var(--bg);font-size:13px;font-weight:500;padding:13px;border-radius:8px;border:none;cursor:none;transition:transform .18s,box-shadow .18s;margin-top:4px;}
+.fsub:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(12,12,10,.14);}
+.fnote{font-size:10.5px;color:var(--muted2);text-align:center;margin-top:9px;line-height:1.6;}
+.fsuccess{display:none;text-align:center;padding:36px 16px;}
+.fsuccess.ok{display:block;}
+.fst{font-family:var(--fd);font-size:22px;font-weight:400;letter-spacing:-.8px;margin-bottom:5px;margin-top:14px;}
+.fss{font-size:12.5px;color:var(--muted);}
+.faqlist{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:44px;}
+.faq-item{border-bottom:1px solid var(--border);background:var(--bg);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{width:100%;text-align:left;background:none;padding:21px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:none;font-size:13.5px;font-weight:500;letter-spacing:-.2px;color:var(--ink);transition:color .2s;}
+.faq-q:hover{color:var(--muted);}
+.faq-ic{width:18px;height:18px;border-radius:50%;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .22s,background .18s,border-color .18s;}
+.faq-item.open .faq-ic{transform:rotate(45deg);background:var(--ink);border-color:var(--ink);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .32s var(--ease);}
+.faq-item.open .faq-a{max-height:160px;}
+.faq-ai{padding:0 24px 20px;font-size:12.5px;color:var(--muted);line-height:1.85;font-weight:300;}
+
+.testimonials{padding:96px 0 0;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
+.tcard{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .2s,transform .25s var(--ease);}
+.tcard:hover{border-color:var(--ink);transform:translateY(-4px);}
+.tcard-quote{font-family:var(--fd);font-size:20px;font-weight:300;letter-spacing:-.5px;line-height:1.45;color:var(--ink);margin-bottom:28px;font-style:italic;}
+.tcard-quote::before{content:'"';font-size:32px;line-height:0;vertical-align:-.4em;margin-right:4px;color:var(--muted2);}
+.tcard-footer{display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--border);}
+.tcard-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.tcard-name{font-size:12.5px;font-weight:600;letter-spacing:-.1px;}
+.tcard-role{font-size:11px;color:var(--muted);}
+.tcard-service{display:inline-block;margin-top:12px;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);}
+.techstack{padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:56px;}
+.techstack-inner{display:flex;align-items:center;gap:0;overflow:hidden;}
+.ts-label{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);white-space:nowrap;flex-shrink:0;margin-right:36px;}
+.ts-items{display:flex;align-items:center;gap:32px;flex-wrap:wrap;}
+.ts-item{display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:500;color:var(--muted);white-space:nowrap;}
+.ts-item-dot{width:5px;height:5px;background:var(--muted2);border-radius:50%;flex-shrink:0;}
+@media(max-width:1024px){.testi-grid{grid-template-columns:1fr 1fr;}.ts-items{gap:20px;}}
+@media(max-width:640px){.testi-grid{grid-template-columns:1fr;}.techstack-inner{flex-direction:column;align-items:flex-start;gap:14px;}.ts-items{gap:14px;}}
+
+.hcta{padding:96px 0;}
+.hcta-inner{border:1px solid var(--border);border-radius:18px;padding:68px;display:flex;align-items:center;justify-content:space-between;gap:48px;background:var(--bg2);position:relative;overflow:hidden;}
+.hcta-inner::before{content:'';position:absolute;top:0;left:32px;right:32px;height:1px;background:linear-gradient(90deg,transparent,var(--muted2),transparent);}
+.hcta-h{font-family:var(--fd);font-size:clamp(32px,4vw,50px);font-weight:300;letter-spacing:-2.5px;line-height:1.1;margin-bottom:8px;}
+.hcta-sub{font-size:13.5px;color:var(--muted);font-weight:300;}
+.hcta-right{flex-shrink:0;text-align:right;}
+.hcta-trust{font-size:10.5px;color:var(--muted2);margin-top:10px;}
+footer{background:var(--ink2);color:rgba(248,248,245,.8);}
+.ft-inner{padding:56px 52px 0;}
+.ft-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07);}
+.ft-logo{font-size:17px;font-weight:600;letter-spacing:-.5px;margin-bottom:10px;color:rgba(248,248,245,.95);display:flex;align-items:center;gap:4px;}
+.ft-logo-mark{width:6px;height:6px;background:var(--gold);border-radius:50%;margin-bottom:1px;}
+.ft-tagline{font-size:12.5px;color:rgba(248,248,245,.32);font-weight:300;line-height:1.75;max-width:230px;}
+.ft-col-h{font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(248,248,245,.22);margin-bottom:13px;}
+.ft-links{display:flex;flex-direction:column;gap:8px;}
+.ft-links a{font-size:12.5px;color:rgba(248,248,245,.38);transition:color .2s;}
+.ft-links a:hover{color:rgba(248,248,245,.8);}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;padding:22px 52px;font-size:11px;color:rgba(248,248,245,.22);}
+.ft-avail{display:flex;align-items:center;gap:6px;}
+.ft-avail::before{content:'';width:5px;height:5px;background:var(--green);border-radius:50%;animation:pk 2.5s ease-in-out infinite;}
+@media(max-width:1024px){
+  .w{padding:0 32px;}nav{padding:0 32px;}.hero{padding:80px 32px 52px;}.fsec,.hcta,.demos{padding-left:0;padding-right:0;}
+  .two{grid-template-columns:1fr;gap:40px;}.stats{grid-template-columns:repeat(2,1fr);}
+  .demo-tabs{flex-wrap:wrap;}.demo-stage{height:460px;}
+  .srv-top{grid-template-columns:1fr;}.srv-r{border-left:none;border-top:1px solid var(--border);flex-direction:row;align-items:center;min-width:auto;padding:20px 42px;}
+  .about-grid{grid-template-columns:1fr;}.ventures{grid-template-columns:1fr;}.values{grid-template-columns:repeat(2,1fr);}
+  .posts{grid-template-columns:1fr 1fr;}.nl{flex-direction:column;gap:22px;}.cgrid{grid-template-columns:1fr;}
+  .ft-grid{grid-template-columns:1fr 1fr;gap:28px;}.ft-inner{padding:44px 32px 0;}.ft-bot{padding:20px 32px;}
+  .hcta-inner{flex-direction:column;text-align:center;padding:44px 32px;}.hcta-right{text-align:center;}
+  .sm-grid{grid-template-columns:1fr;}
+}
+@media(max-width:640px){
+  nav{padding:0 20px;}.nmid{display:none;}.hbtn{display:flex;}
+  .hero{padding:60px 20px 44px;}.hero-row{flex-direction:column;gap:20px;align-items:flex-start;}
+  .fsec,.demos,.hcta{padding:60px 0;}.w{padding:0 20px;}
+  .stats{grid-template-columns:1fr 1fr;}.demo-tabs{display:grid;grid-template-columns:1fr 1fr;}
+  .posts{grid-template-columns:1fr;}.values{grid-template-columns:1fr 1fr;}
+  .ft-grid{grid-template-columns:1fr;}.ft-inner{padding:40px 20px 0;}.ft-bot{padding:18px 20px;flex-direction:column;gap:6px;text-align:center;}
+  .nl{padding:26px 20px;}.nl-form{flex-direction:column;width:100%;}.nl-in{width:100%;}
+  .f2{grid-template-columns:1fr;}.cform{padding:22px 18px;}.cgrid{padding-bottom:60px;}
+  body{cursor:auto;}.cdot,.cring{display:none;}
+  .sm-header{padding:24px 22px 18px;}.sm-body{padding:22px 22px 32px;}.sm-h{font-size:26px;}
+  .dp-mob{flex-direction:column;gap:20px;padding:16px;}.mob-info{max-width:100%;text-align:center;}.mob-nav-btns{flex-direction:row;flex-wrap:wrap;justify-content:center;}
+  .d-side{width:120px;}.d-cards{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:1024px){.contact-split{grid-template-columns:1fr!important;}}
+</style>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+<body>
+<div class="cdot" id="cDot"></div>
+<div class="cring" id="cRing"></div>
+
+<nav>
+  <a class="logo" href="#" onclick="go('home');return false;" style="display:flex;align-items:center;text-decoration:none;gap:0;">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAA8CAYAAADmBa1FAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAF50lEQVR42u3YXWxcRxUH8P85M/dj1/bajuM4clzSNEECSlUkRMTHA8pjKVBFqS2ktEIVykNASREIaMWDvUKCSqCUUlGQqlaKqERjAxWiIn2jUR+qopY2pcVpgqCJU2zqr9je9d175845PNhODQWJB2CNPD/p6t6rnbsze+bM7MwFgiAIgiAIgiAIgiAIgiAIgiAIgmBLonZWPj4MMzz8Lxo2Ar/5XhWMiU3tHQYwBqU6ZPNjOg7+p1/4+rvKBiGj/0N0FEx1yC+/mnxnd68/WAp8ZGFMDOmqgFc9T7841XX82HfnV2QcBsOQyccqx4d2lUeyXD0ZoFohc2U2fvT9dzfPPDsGc6iO8jff69y5b7d7NDa+lq1C8xaoyOEtga/MRi986tvZNzfq/l//ZtuOQI+tnzNH5zPHWVZAkhjMHnAeIGtl6u1Oo5hfG/Ij0Oe/b5drHXqu6UQABhjcWLUFEVTHoQBw8Woa7emTlxsZabEqVBRAXkBSVuvEvL657m0R6A2T013P9nVeO16rijEWiCwoiuH7+9Qc/shMV/00vkF1yO9+2PXxfTfl93rSVocBw3hARN97QD59/vGOSzTS/L0q6E9PrjzQ310eWFhgX5AYZ6AVC1pYNo1Tz/c9ADQwVofWt0ug69eH7uzCtWb6YwAVz0BsQVEJFQUt5jy/PrXp0qpdbjaKHzklFYDBArYskSFaalZy1SadPHkg/sKt02dRoLrSBFoFk8ugEYBmrvNf2nXZnQOIsJb92yajdRyGRlD87Mtsd/W6ky2vpbVk4gSIIvUfGND4t49U84NfzM7u39t8pLbDdwlBYcFggBSejfB+bRwhwu2TT7x1zw0D7vjinLoaYFKjKJiE1dg35+ITn5so/PgwzMjE369mtsPyjgDoQ0dRG+yPDidWU2bAJKAkIuntYfprZi9qVLmwp3flDhDUxCAYFKJgJlhVKBR65e3oqW4rB3d0+KHFRSDPQL7wKh50rWlXmvOtn99zGq12TpPtnKN1fQWw/Ov7zScH+8qPthwkTsAmUnR1ekQpzWTS+vPQbv+xwkE5AScJBgTkvMeClCqRBRVZ/OGeqv9gYnyvBcFVgDyHrzKsTOPJkdNorY8g386sal+k1+ZMjB4e6L/5huWROPVsrUEUeUQRYCyYDYy1cCYBW2PyfXvdmFeeujJtHiePxIv3ZcmxlFSWpRfJDfIcgHgsNUz53GTliYefWVjeGEHbMaM3elkrtsh7a+Vna1UfGStqY1AUASYCbAS1ETFZaJq6fVIQsZX9QwNyonQ0I16oLEV8DvIOcLkgz6FGhWKjS8COx4CFtm9YbJvr19FR8H31xaWHPl+9/5YhOVKoqrHgKAaYgciymggGLPmNQ0bnFvlsmtJAZ4fsvTolF0CIxauUJVCWjNIBrhCxMHjpUu0nDz/zx3x0FFxv8/a73YHGGIA6gMEetTY2N6lIK46ZYwtlCzIxyEYQqO1lL4em3qK7BwdpoLuqL6UpjxNRy4uQdwxXAJ4AVlIiTt4zVCi2CNPuBtTPQVVBN99WXr3t1ri/lspgM1MxhCLLlZtNjUmo0VOBzi7S0ie+nv9g54fc7J7S3N4R4XJjBVm+SmhlkEZD2OXqOmL2F2fiXx19sPGcjoIPbYGXSbwVentsDKQKqkb+L90Vfq0j5VfI0IXOlM/v7OYXYjZvuELvWM3ozPqGp8ya/uk8188A5lIcYTJJ8Fqtyi+nCb8aW7yxo1rOKEBjWySjaQu1QwHCU18xZ/o6pccJC5MwEyRNkbacueXqUvK+u0415hTAT+9NbtyzU85H7F90BZwXkCp8YmGnl+zlOx8sjmkbd4Jbbo7evKYGFBML9tWidMdK7w0RETPUlFQ2Mv7a0VONubVyANXzN5++L/5Wb5VO5E5ZBKRrneW8N78YHQVP/AGEifatnf/P3t7S9Xvd9ME71/QPR/BvGR+GIVoP26bz+PC7/7ivl6V3yqqCNrI+CIIgCIIgCIIgCIIgCIIgCIIgCIIgCIL/hr8BGCO9s3fUepIAAAAASUVORK5CYII=" alt="W" style="height:28px;width:auto;display:block;flex-shrink:0;position:relative;z-index:1;">
+    <span style="font-family:'Geist',system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:-.4px;color:var(--ink);margin-left:-4px;position:relative;z-index:0;line-height:1;">Webmify</span>
+  </a>
+  <ul class="nmid">
+    <li><a href="#" onclick="go('home');return false;" data-p="home" class="act">Home</a></li>
+    <li><a href="#" onclick="go('services');return false;" data-p="services">Services</a></li>
+    <li><a href="#" onclick="go('about');return false;" data-p="about">About</a></li>
+    <li><a href="#" onclick="go('blog');return false;" data-p="blog">Blog</a></li>
+  </ul>
+  <a href="#" class="nbtn" onclick="go('contact');return false;">Start a project</a>
+  <button class="hbtn" onclick="mobOpen()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mob" id="mobMenu">
+  <button class="mob-x" onclick="mobOpen()">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+  <a href="#" onclick="go('home');mobOpen();return false;" data-p="home">Home</a>
+  <a href="#" onclick="go('services');mobOpen();return false;" data-p="services">Services</a>
+  <a href="#" onclick="go('about');mobOpen();return false;" data-p="about">About</a>
+  <a href="#" onclick="go('blog');mobOpen();return false;" data-p="blog">Blog</a>
+  <a href="#" onclick="go('contact');mobOpen();return false;" data-p="contact">Start a project</a>
+  <a href="#" onclick="openCalendly();mobOpen();return false;">Book a free call</a>
+</div>
+
+
+        <div class="sm-sub" id="sample-sub">What this looks like in practice.</div>
+      </div>
+      <button class="sm-close" onclick="closeSample()">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 2L2 12M2 2l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="sample-panel">
+      <div class="sample-tabs" id="sample-tabs"></div>
+      <div class="sample-view" id="sample-view"></div>
+    </div>
+  </div>
+</div>
+
+<div class="smodal" id="smodal">
+  <div class="smodal-box">
+    <div class="sm-header">
+      <div><div class="sm-h" id="sm-h">Service</div><div class="sm-sub" id="sm-sub">What we deliver.</div></div>
+      <button class="sm-close" onclick="closeModal()">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12 2L2 12M2 2l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="sm-body" id="sm-body"></div>
+  </div>
+</div>
+
+<!-- HOME -->
+<div class="page on" id="pg-home">
+  <div class="hero">
+    <div class="hero-kicker">Own your space online</div>
+    <h1 class="hero-h">
+      <em>Everybody wants</em>
+      <b>your brand.</b>
+    </h1>
+    <div class="hero-row">
+      <p class="hero-sub">Your brand on the web. Generating revenue, earning trust, and making the right people stop and pay attention.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn btn-k" onclick="go('contact');return false;">Start a project</a>
+        <a href="#" class="btn btn-o" onclick="go('services');return false;">See what we build</a>
+      </div>
+    </div>
+    <div style="margin-top:18px;font-size:11px;color:var(--muted2);letter-spacing:.3px;" class="rv">Free strategy call. No commitment.</div>
+  </div>
+
+  <div class="mq-wrap">
+    <span class="mq-label">We build</span>
+    <div class="mq-track">
+      <div class="mq-inner">
+        <div class="mq-g">
+          <span class="mq-i">Websites<span class="mq-sep"> / </span></span>
+          <span class="mq-i">Web Applications<span class="mq-sep"> / </span></span>
+          <span class="mq-i">SaaS Platforms<span class="mq-sep"> / </span></span>
+          <span class="mq-i">E-commerce<span class="mq-sep"> / </span></span>
+          <span class="mq-i">Dashboards<span class="mq-sep"> / </span></span>
+          <span class="mq-i">Mobile Apps<span class="mq-sep"> / </span></span>
+          <span class="mq-i">SEO<span class="mq-sep"> / </span></span>
+          <span class="mq-i">Copywriting<span class="mq-sep"> / </span></span>
+        </div>
+        <div class="mq-g" aria-hidden="true">
+          <span class="mq-i">Websites<span class="mq-sep"> / </span></span>
+          <span class="mq-i">Web Applications<span class="mq-sep"> / </span></span>
+          <span class="mq-i">SaaS Platforms<span class="mq-sep"> / </span></span>
+          <span class="mq-i">E-commerce<span class="mq-sep"> / </span></span>
+          <span class="mq-i">Dashboards<span class="mq-sep"> / </span></span>
+          <span class="mq-i">Mobile Apps<span class="mq-sep"> / </span></span>
+          <span class="mq-i">SEO<span class="mq-sep"> / </span></span>
+          <span class="mq-i">Copywriting<span class="mq-sep"> / </span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fsec">
+    <div class="w">
+      <div class="two">
+        <div>
+          <div class="ey rv">What we do differently</div>
+          <h2 class="sh rv">More clients.<br><em>Less waiting.</em></h2>
+          <p class="sp rv">Great digital products are not about pretty pixels. They are about performance, conversion, and results. Every project we take on is built around one standard: will this genuinely satisfy our client?</p>
+          <a href="#" class="btn btn-k rv" onclick="go('contact');return false;">Book a free call</a>
+        </div>
+        <div class="pillars rv">
+          <div class="pillar">
+            <div class="pillar-ico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="var(--ink)" stroke-width="1.4"/><path d="M7 4v3l2 1.5" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+            <div><div class="pillar-t">Weeks, not months</div><div class="pillar-d">You get a live staging URL in week one. Your product ships on the date we agreed, without exception.</div></div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-ico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 8l3 3 7-8" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="pillar-t">Fixed price, agreed upfront</div><div class="pillar-d">Scope, timeline, and cost locked in before we write a single line of code. No billing surprises, ever.</div></div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-ico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="2" stroke="var(--ink)" stroke-width="1.4"/><path d="M5 7l2 2 2-3" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="pillar-t">You own everything</div><div class="pillar-d">Full codebase, all assets, all credentials handed over on delivery. No lock-in, no ongoing dependency.</div></div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-ico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5" r="2.5" stroke="var(--ink)" stroke-width="1.4"/><path d="M2 12c0-2.76 2.24-4 5-4s5 1.24 5 4" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+            <div><div class="pillar-t">Direct line to your builder</div><div class="pillar-d">No account managers, no ticket queues. You speak to the person building your product, always.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="stats rv">
+        <div class="stat"><span class="sn">4wk</span><span class="sl">Average MVP delivery</span></div>
+        <div class="stat"><span class="sn">2+</span><span class="sl">Live platforms shipped</span></div>
+        <div class="stat"><span class="sn">24h</span><span class="sl">Response time</span></div>
+        <div class="stat"><span class="sn">$0</span><span class="sl">Lock-in or hidden fees</span></div>
+      </div>
+
+      <!-- TECH STACK STRIP single scrolling line -->
+      <div class="techstack rv">
+        <div style="display:flex;align-items:center;gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0;overflow:hidden;">
+          <span style="font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);white-space:nowrap;flex-shrink:0;padding:0 28px 0 0;border-right:1px solid var(--border);margin-right:28px;">Stack</span>
+          <div style="overflow:hidden;flex:1;">
+            <div style="display:flex;gap:0;animation:mq 22s linear infinite;width:max-content;">
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">Next.js</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">TypeScript</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">PostgreSQL</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">Vercel</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">React Native</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">Stripe</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">Supabase</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">Tailwind CSS</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">Next.js</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">TypeScript</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">PostgreSQL</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">Vercel</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">React Native</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">Stripe</span>
+              <span style="padding:0 20px;font-size:11px;color:var(--muted2);white-space:nowrap;">·</span>
+              <span style="padding:0 20px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;">Supabase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIALS -->
+      <div class="testimonials">
+        <div class="ey rv">What clients say</div>
+        <h2 class="sh rv" style="max-width:540px;margin-bottom:0;">Real words from <em>real projects.</em></h2>
+        <div class="testi-grid">
+          <div class="tcard rv">
+            <div class="tcard-quote">Under four weeks, we had a fully working platform. Bootcamp flows, mentor portals, student dashboards, admin controls   all of it. The build quality was genuinely beyond what we expected at this scale and timeline.</div>
+            <div class="tcard-footer">
+              <div class="tcard-av" style="background:#ede9fe;color:#5b21b6;">CK</div>
+              <div>
+                <div class="tcard-name">C. Kehinde</div>
+                <div class="tcard-role">CEO, Conceivr</div>
+              </div>
+            </div>
+            <span class="tcard-service">Web Application / Platform Build</span>
+          </div>
+          <div class="tcard rv">
+            <div class="tcard-quote">We engaged Webmify to build Classinton while still in ideation. They translated a voice note and a rough brief into a full SaaS architecture, pricing model, and working product. The level of strategic thinking alongside the execution is rare.</div>
+            <div class="tcard-footer">
+              <div class="tcard-av" style="background:#d1fae5;color:#065f46;">AR</div>
+              <div>
+                <div class="tcard-name">A. Richards</div>
+                <div class="tcard-role">Founder, Classinton</div>
+              </div>
+            </div>
+            <span class="tcard-service">SaaS Platform / In Progress</span>
+          </div>
+          <div class="tcard rv">
+            <div class="tcard-quote">I hired Webmify to rewrite our homepage and service pages. Within two weeks of the new copy going live, our enquiry rate from organic traffic went up noticeably. They write like they understand the reader, not just the business.</div>
+            <div class="tcard-footer">
+              <div class="tcard-av" style="background:#fef3c7;color:#92400e;">MS</div>
+              <div>
+                <div class="tcard-name">M. Sullivan</div>
+                <div class="tcard-role">Director, Sullivan Consulting</div>
+              </div>
+            </div>
+            <span class="tcard-service">Copywriting / SEO</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="demos" style="padding-top:92px;">
+    <div class="w">
+      <div class="ey rv">Live previews</div>
+      <h2 class="sh rv" style="max-width:560px;margin-bottom:8px;">Interact with what we build.</h2>
+      <p class="sp rv" style="max-width:480px;margin-bottom:0;">Every tab below is real, working UI. This is the level of craft we bring to every project.</p>
+      <div style="margin-top:36px;" class="rv">
+        <div class="demo-tabs">
+          <div class="dtab active" onclick="sd('landing',this)">Landing Page</div>
+          <div class="dtab" onclick="sd('dashboard',this)">Dashboard</div>
+          <div class="dtab" onclick="sd('ecommerce',this)">E-commerce</div>
+          <div class="dtab" onclick="sd('webapp',this)">Web App</div>
+          <div class="dtab" onclick="sd('mobile',this)">Mobile App</div>
+        </div>
+        <div class="demo-stage">
+
+          <div class="demo-panel dp-land active" id="demo-landing">
+            <div class="dl-nav"><div class="dl-logo">Nexus</div><div class="dl-links"><span>Product</span><span>Pricing</span><span>Docs</span></div><div class="dl-btn">Get started</div></div>
+            <div class="dl-body">
+              <div class="dl-badge">Now in public beta</div>
+              <div class="dl-title"><em>The platform that</em><br>grows with you.</div>
+              <div class="dl-sub">Ship faster, scale smarter. The infrastructure your team needs to build and launch in days.</div>
+              <div class="dl-ctas"><div class="dl-c1">Start for free</div><div class="dl-c2">Watch demo</div></div>
+              <div class="dl-logos"><span class="dl-logo-item">Stripe</span><span class="dl-logo-item">Vercel</span><span class="dl-logo-item">Linear</span><span class="dl-logo-item">Figma</span><span class="dl-logo-item">Notion</span></div>
+            </div>
+          </div>
+
+          <div class="demo-panel dp-dash" id="demo-dashboard">
+            <div class="d-side">
+              <div class="d-slogo">Dashly</div>
+              <div class="d-sitem act"><span class="d-dot c-b"></span>Overview</div>
+              <div class="d-sitem"><span class="d-dot c-g"></span>Revenue</div>
+              <div class="d-sitem"><span class="d-dot c-a"></span>Users</div>
+              <div class="d-sitem"><span class="d-dot c-p"></span>Products</div>
+              <div class="d-sitem"><span class="d-dot c-x"></span>Settings</div>
+            </div>
+            <div class="d-main">
+              <div class="d-head"><div class="d-title">Overview</div><div class="d-badge">Live</div></div>
+              <div class="d-cards">
+                <div class="dc"><div class="dc-l">Revenue</div><div class="dc-n">$48.2k</div><div class="dc-ch up">+12.4%</div></div>
+                <div class="dc"><div class="dc-l">Users</div><div class="dc-n">3,841</div><div class="dc-ch up">+8.1%</div></div>
+                <div class="dc"><div class="dc-l">Churn</div><div class="dc-n">2.3%</div><div class="dc-ch dn">+0.4%</div></div>
+                <div class="dc"><div class="dc-l">MRR</div><div class="dc-n">$9.6k</div><div class="dc-ch up">+5.2%</div></div>
+              </div>
+              <div class="d-chart">
+                <div class="d-cl">Monthly Revenue</div>
+                <div class="d-bars">
+                  <div class="bar" style="height:38%;background:var(--border2)"></div><div class="bar" style="height:52%;background:var(--border2)"></div><div class="bar" style="height:44%;background:var(--border2)"></div><div class="bar" style="height:68%;background:var(--border2)"></div><div class="bar" style="height:58%;background:var(--border2)"></div><div class="bar" style="height:76%;background:var(--border2)"></div><div class="bar" style="height:62%;background:var(--border2)"></div><div class="bar" style="height:88%;background:#1e4fd4"></div><div class="bar" style="height:72%;background:var(--border2)"></div><div class="bar" style="height:94%;background:var(--border2)"></div><div class="bar" style="height:80%;background:var(--border2)"></div><div class="bar" style="height:100%;background:var(--ink)"></div>
+                </div>
+              </div>
+              <div class="d-table">
+                <div class="d-th"><span>Product</span><span>Revenue</span><span>Users</span><span>Status</span></div>
+                <div class="d-tr"><div class="d-name">Pro Plan</div><span>$6,400</span><span>320</span><span class="d-st st-live">Live</span></div>
+                <div class="d-tr"><div class="d-name">Team Plan</div><span>$2,100</span><span>42</span><span class="d-st st-live">Live</span></div>
+                <div class="d-tr"><div class="d-name">Enterprise</div><span>$1,100</span><span>4</span><span class="d-st st-pend">Pending</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-panel dp-ec" id="demo-ecommerce">
+            <div class="ec-nav"><div class="ec-logo">MAISON</div><div class="ec-cats"><span>New In</span><span>Clothing</span><span>Accessories</span><span>Sale</span></div><div class="ec-cart">Cart (2)</div></div>
+            <div class="ec-body">
+              <div class="ec-fil">
+                <div class="ec-ft">Category</div>
+                <div class="ec-fi"><div class="ec-fb ck"></div>Tops</div>
+                <div class="ec-fi"><div class="ec-fb ck"></div>Bottoms</div>
+                <div class="ec-fi"><div class="ec-fb"></div>Outerwear</div>
+                <div class="ec-ft" style="margin-top:14px;">Size</div>
+                <div class="ec-fi"><div class="ec-fb ck"></div>XS / S</div>
+                <div class="ec-fi"><div class="ec-fb ck"></div>M / L</div>
+                <div class="ec-fi"><div class="ec-fb"></div>XL</div>
+              </div>
+              <div class="ec-prods">
+                <div class="ec-p"><div class="ec-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 6c-4 0-7 3-7 6v2h14v-2c0-3-3-6-7-6z" stroke="var(--muted2)" stroke-width="1.5" fill="none"/><rect x="7" y="14" width="18" height="12" rx="2" stroke="var(--muted2)" stroke-width="1.5" fill="none"/></svg></div><div class="ec-info"><div class="ec-pn">Linen Midi Dress</div><div class="ec-pr">$148</div><button class="ec-add">Add to cart</button></div></div>
+                <div class="ec-p"><div class="ec-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M11 7h10l3 5H8l3-5z" stroke="var(--muted2)" stroke-width="1.5" fill="none"/><rect x="7" y="12" width="18" height="13" rx="2" stroke="var(--muted2)" stroke-width="1.5" fill="none"/></svg></div><div class="ec-info"><div class="ec-pn">Wool Trench Coat</div><div class="ec-pr">$320</div><button class="ec-add">Add to cart</button></div></div>
+                <div class="ec-p"><div class="ec-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M12 7h8l2 4H10l2-4z" stroke="var(--muted2)" stroke-width="1.5" fill="none"/><rect x="9" y="11" width="14" height="14" rx="2" stroke="var(--muted2)" stroke-width="1.5" fill="none"/></svg></div><div class="ec-info"><div class="ec-pn">Oxford Tee</div><div class="ec-pr">$64</div><button class="ec-add">Add to cart</button></div></div>
+                <div class="ec-p"><div class="ec-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M11 9h10v2l2 14H9l2-14v-2z" stroke="var(--muted2)" stroke-width="1.5" fill="none"/></svg></div><div class="ec-info"><div class="ec-pn">Leather Tote</div><div class="ec-pr">$210</div><button class="ec-add">Add to cart</button></div></div>
+                <div class="ec-p"><div class="ec-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 7a8 8 0 018 8v8H8v-8a8 8 0 018-8z" stroke="var(--muted2)" stroke-width="1.5" fill="none"/></svg></div><div class="ec-info"><div class="ec-pn">Tapered Chinos</div><div class="ec-pr">$96</div><button class="ec-add">Add to cart</button></div></div>
+                <div class="ec-p"><div class="ec-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M9 16c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="var(--muted2)" stroke-width="1.5" fill="none"/><rect x="7" y="16" width="18" height="8" rx="2" stroke="var(--muted2)" stroke-width="1.5" fill="none"/></svg></div><div class="ec-info"><div class="ec-pn">Cashmere Scarf</div><div class="ec-pr">$82</div><button class="ec-add">Add to cart</button></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-panel dp-app" id="demo-webapp">
+            <div class="app-bar">
+              <div class="app-tab act">Members</div><div class="app-tab">Projects</div><div class="app-tab">Analytics</div><div class="app-tab">Settings</div>
+            </div>
+            <div class="app-body">
+              <div class="app-side">
+                <div class="app-st">Cohorts</div>
+                <div class="app-si act"><span class="app-sin">All Members</span><span class="app-sct">142</span></div>
+                <div class="app-si"><span class="app-sin">Active</span><span class="app-sct">98</span></div>
+                <div class="app-si"><span class="app-sin">Pending</span><span class="app-sct">24</span></div>
+                <div class="app-si"><span class="app-sin">Alumni</span><span class="app-sct">20</span></div>
+              </div>
+              <div class="app-main">
+                <div class="app-mh"><div class="app-mt">All Members</div><div class="btn btn-k btn-sm" style="font-size:11px;padding:6px 14px;">Invite</div></div>
+                <div class="app-stats">
+                  <div class="as"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6" cy="5" r="2.5" stroke="var(--ink)" stroke-width="1.2"/><path d="M1 13c0-3 2-4 5-4s5 1 5 4" stroke="var(--ink)" stroke-width="1.2" stroke-linecap="round"/></svg><div class="as-n">142</div><div class="as-l">Total members</div></div>
+                  <div class="as"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 4L13 4" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="as-n">68%</div><div class="as-l">Completion</div></div>
+                  <div class="as"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="var(--ink)" stroke-width="1.2"/><path d="M8 5v3l2 2" stroke="var(--ink)" stroke-width="1.2" stroke-linecap="round"/></svg><div class="as-n">12</div><div class="as-l">Active today</div></div>
+                </div>
+                <div class="app-rows">
+                  <div class="app-row"><div class="ar-av" style="background:#dbeafe;color:#1e40af;">JM</div><div><div class="ar-n">James Miller</div><div class="ar-s">Joined June 2026 / Fintech track</div></div><span class="ar-b b-active">Active</span></div>
+                  <div class="app-row"><div class="ar-av" style="background:#fef9c3;color:#854d0e;">SC</div><div><div class="ar-n">Sarah Chen</div><div class="ar-s">Joined May 2026 / Edtech track</div></div><span class="ar-b b-pending">Pending</span></div>
+                  <div class="app-row"><div class="ar-av" style="background:#dcfce7;color:#166534;">LB</div><div><div class="ar-n">Lucas Bennett</div><div class="ar-s">Joined April 2026 / Healthtech track</div></div><span class="ar-b b-active">Active</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-panel dp-mob" id="demo-mobile">
+            <div class="phone">
+              <div class="ph-status"><span class="ph-time">9:41</span><div class="ph-si-wrap"><span class="ph-si"></span><span class="ph-si"></span><span class="ph-si"></span></div></div>
+              <div class="ph-screen">
+                <div class="mob-screen ms-on" id="ms-home">
+                  <div class="ms-home-top">
+                    <div class="ms-ht-row"><div class="ms-ht-label">Good morning</div><div class="ms-ht-av">JM</div></div>
+                    <div class="ms-bal">$4,820.50</div>
+                    <div class="ms-bsub">+$240 this month</div>
+                  </div>
+                  <div class="ms-quick">
+                    <div class="ms-qi" onclick="mobS('send')"><div class="ms-qi-btn"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H5M10 2v5" stroke="var(--muted)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ms-qi-l">Send</div></div>
+                    <div class="ms-qi"><div class="ms-qi-btn"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 2L2 10M2 10H7M2 10V5" stroke="var(--muted)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ms-qi-l">Receive</div></div>
+                    <div class="ms-qi" onclick="mobS('cards')"><div class="ms-qi-btn"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2.5" width="10" height="7" rx="1.5" stroke="var(--muted)" stroke-width="1.2"/><path d="M1 5.5h10" stroke="var(--muted)" stroke-width="1.2"/></svg></div><div class="ms-qi-l">Cards</div></div>
+                    <div class="ms-qi"><div class="ms-qi-btn"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="var(--muted)" stroke-width="1.2"/><path d="M6 4v2l1.5 1.5" stroke="var(--muted)" stroke-width="1.2" stroke-linecap="round"/></svg></div><div class="ms-qi-l">History</div></div>
+                  </div>
+                  <div class="ms-list">
+                    <div class="ms-list-title">Recent</div>
+                    <div class="ms-item"><div class="ms-item-ico" style="background:#f0f0f8;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="2" stroke="var(--muted2)" stroke-width="1.2"/></svg></div><div><div class="ms-item-n">Amazon</div><div class="ms-item-d">Jun 3</div></div><div class="ms-item-amt" style="color:var(--red);">-$84.99</div></div>
+                    <div class="ms-item"><div class="ms-item-ico" style="background:#f0f8f0;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1l1.2 3.5L11 5l-2.5 2.5.5 3.5L6 9.5 3 11l.5-3.5L1 5l3.8-.5L6 1z" stroke="var(--green)" stroke-width="1.1"/></svg></div><div><div class="ms-item-n">Client Payment</div><div class="ms-item-d">Jun 1</div></div><div class="ms-item-amt" style="color:var(--green);">+$800</div></div>
+                    <div class="ms-item"><div class="ms-item-ico" style="background:#f8f4f0;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="var(--muted2)" stroke-width="1.2"/></svg></div><div><div class="ms-item-n">Starbucks</div><div class="ms-item-d">May 31</div></div><div class="ms-item-amt" style="color:var(--red);">-$6.40</div></div>
+                  </div>
+                  <div class="ms-bnav">
+                    <div class="ms-bni act"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7L6.5 2l4.5 5v4.5H8.5V9h-3v2.5H2V7z" stroke="var(--ink)" stroke-width="1.2" fill="none"/></svg><div class="ms-bni-l">Home</div></div>
+                    <div class="ms-bni"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 9V5l1.5-2.5h6L11 5v4H2z" stroke="var(--muted)" stroke-width="1.2" fill="none"/></svg><div class="ms-bni-l">Stats</div></div>
+                    <div class="ms-bni" onclick="mobS('cards')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="3" width="11" height="7" rx="1.5" stroke="var(--muted)" stroke-width="1.2"/><path d="M1 5.5h11" stroke="var(--muted)" stroke-width="1.2"/></svg><div class="ms-bni-l">Cards</div></div>
+                    <div class="ms-bni"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="4.5" r="2.5" stroke="var(--muted)" stroke-width="1.2"/><path d="M1 11.5c0-3 2.5-4 5.5-4s5.5 1 5.5 4" stroke="var(--muted)" stroke-width="1.2" stroke-linecap="round"/></svg><div class="ms-bni-l">Profile</div></div>
+                  </div>
+                </div>
+                <div class="mob-screen ms-right" id="ms-send">
+                  <div class="ms-back-row"><button class="ms-back-btn" onclick="mobS('home')"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M9 3L4 7.5 9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ms-screen-title">Send Money</div></div>
+                  <div class="ms-send-wrap">
+                    <div class="ms-send-h">Choose recipient</div>
+                    <div class="ms-contact"><div class="ms-c-av" style="background:#dbeafe;color:#1e40af;">SC</div><div><div class="ms-c-name">Sarah Chen</div><div class="ms-c-info">sarah@company.com</div></div></div>
+                    <div class="ms-contact"><div class="ms-c-av" style="background:#dcfce7;color:#166534;">LB</div><div><div class="ms-c-name">Lucas Bennett</div><div class="ms-c-info">lucas@studio.co</div></div></div>
+                    <div class="ms-amount-wrap"><div class="ms-amt-label">Amount</div><div class="ms-amt">$250.00</div></div>
+                    <button class="ms-send-btn">Send payment</button>
+                  </div>
+                </div>
+                <div class="mob-screen ms-right" id="ms-cards">
+                  <div class="ms-back-row"><button class="ms-back-btn" onclick="mobS('home')"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M9 3L4 7.5 9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ms-screen-title">My Cards</div></div>
+                  <div class="ms-cards-wrap">
+                    <div class="ms-card-visual">
+                      <div class="ms-cv-top"><div class="ms-cv-name">Webmify Card</div><div class="ms-cv-chip"></div></div>
+                      <div><div class="ms-cv-num">**** **** **** 4291</div><div class="ms-cv-holder">J. MILLER</div></div>
+                    </div>
+                    <div class="ms-c-row"><div class="ms-c-l">Available balance</div><div class="ms-c-v">$4,820.50</div></div>
+                    <div class="ms-c-row"><div class="ms-c-l">Credit limit</div><div class="ms-c-v">$10,000</div></div>
+                    <div class="ms-c-row"><div class="ms-c-l">Minimum due</div><div class="ms-c-v">$0</div></div>
+                    <div class="ms-c-row"><div class="ms-c-l">Statement date</div><div class="ms-c-v">June 28</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mob-info">
+              <div class="mob-info-title">Mobile apps, built right.</div>
+              <div class="mob-info-sub">Tap the icons inside the phone. Every screen is interactive. This is exactly how we build real apps.</div>
+              <div class="mob-nav-btns">
+                <button class="mnb act" onclick="mobS('home')">Home screen</button>
+                <button class="mnb" onclick="mobS('send')">Send money</button>
+                <button class="mnb" onclick="mobS('cards')">My cards</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div style="margin-top:18px;text-align:center;" class="rv">
+        <a href="#" class="btn btn-o" onclick="go('services');return false;">View all services and pricing</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hcta">
+    <div class="w">
+      <div class="hcta-inner rv">
+        <div>
+          <h2 class="hcta-h">Your next project starts with one conversation.</h2>
+          <p class="hcta-sub">One conversation. Full clarity.</p>
+        </div>
+        <div class="hcta-right">
+          <a href="#" class="btn btn-k" onclick="go('contact');return false;" style="font-size:14px;padding:14px 32px;">Start a project</a>
+          <div class="hcta-trust">Free intro call. No commitment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="fth"></div>
+</div>
+<!-- SERVICES -->
+<div class="page" id="pg-services">
+  <div style="padding-top:92px;padding-bottom:96px;">
+    <div class="w">
+      <div class="ey rv">Services</div>
+      <h1 class="srv-hero-h rv">Everything you need<br><em>to go live.</em></h1>
+      <p class="srv-intro rv">Fixed price. Real timeline. Full ownership. From a landing page to a full platform, we build it all.</p>
+      <div class="srv-list rv">
+        <div class="srv-item" data-cat="web"><div class="srv-top"><div class="srv-l"><div class="srv-code"><span class="srv-cat-dot dot-web"></span>01 / Website</div><div class="srv-name">Business Website</div><div class="srv-desc">Your business, presented professionally online. Fast, SEO-optimised, mobile-first, and designed to convert visitors into clients before you say a word.</div><div class="tags"><span class="tag">Next.js</span><span class="tag">SEO-ready</span><span class="tag">CMS</span><span class="tag">Custom design</span><span class="tag">Mobile-first</span></div></div><div class="srv-r"><div><div class="srv-pl">From</div><div class="srv-price">$150</div><div class="srv-time">5 to 7 days</div></div><button class="btn btn-k btn-sm" onclick="openModal('website')">Get started</button></div></div></div>
+        <div class="srv-item" data-cat="ecom"><div class="srv-top"><div class="srv-l"><div class="srv-code"><span class="srv-cat-dot dot-ecom"></span>02 / E-commerce</div><div class="srv-name">Online Store</div><div class="srv-desc">A fully custom store you own completely. Products, cart, checkout, payments. No monthly platform fees. Built to sell from day one.</div><div class="tags"><span class="tag">Stripe</span><span class="tag">Paystack</span><span class="tag">Inventory</span><span class="tag">Order management</span></div></div><div class="srv-r"><div><div class="srv-pl">From</div><div class="srv-price">$250</div><div class="srv-time">1 to 2 weeks</div></div><button class="btn btn-k btn-sm" onclick="openModal('ecommerce')">Get started</button></div></div></div>
+        <div class="srv-item" data-cat="web"><div class="srv-top"><div class="srv-l"><div class="srv-code"><span class="srv-cat-dot dot-web"></span>03 / Marketing</div><div class="srv-name">Landing Page</div><div class="srv-desc">One page. One goal. Animated, fast-loading, and built to convert. Ideal for product launches, campaigns, waitlists, and lead generation.</div><div class="tags"><span class="tag">Animations</span><span class="tag">Lead capture</span><span class="tag">A/B ready</span><span class="tag">CRO-focused</span></div></div><div class="srv-r"><div><div class="srv-pl">From</div><div class="srv-price">$100</div><div class="srv-time">3 to 5 days</div></div><button class="btn btn-k btn-sm" onclick="openModal('landing')">Get started</button></div></div></div>
+        <div class="srv-item" data-cat="app"><div class="srv-top"><div class="srv-l"><div class="srv-code"><span class="srv-cat-dot dot-app"></span>04 / Web App</div><div class="srv-name">MVP Web Application</div><div class="srv-desc">Your idea, live and working in 3 to 4 weeks. Authentication, dashboards, payments, and everything your V1 needs to start getting real users.</div><div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Auth</span><span class="tag">Payments</span></div></div><div class="srv-r"><div><div class="srv-pl">From</div><div class="srv-price">$500</div><div class="srv-time">3 to 4 weeks</div></div><button class="btn btn-k btn-sm" onclick="openModal('webapp')">Get started</button></div></div></div>
+        <div class="srv-item" data-cat="app"><div class="srv-top"><div class="srv-l"><div class="srv-code"><span class="srv-cat-dot dot-app"></span>05 / SaaS</div><div class="srv-name">SaaS Platform</div><div class="srv-desc">Subscription billing, multi-tenant architecture, admin panel, onboarding flows, analytics. Every layer of a real software business, built properly.</div><div class="tags"><span class="tag">Multi-tenant</span><span class="tag">Stripe billing</span><span class="tag">Admin panel</span><span class="tag">Prisma</span></div></div><div class="srv-r"><div><div class="srv-pl">From</div><div class="srv-price">$800</div><div class="srv-time">6 to 8 weeks</div></div><button class="btn btn-k btn-sm" onclick="openModal('saas')">Get started</button></div></div></div>
+        <div class="srv-item" data-cat="mobile"><div class="srv-top"><div class="srv-l"><div class="srv-code"><span class="srv-cat-dot dot-mobile"></span>06 / Mobile</div><div class="srv-name">Mobile Application</div><div class="srv-desc">iOS and Android, one codebase. From fintech to e-commerce to productivity, we design and build mobile experiences that feel native and perform.</div><div class="tags"><span class="tag">React Native</span><span class="tag">iOS</span><span class="tag">Android</span><span class="tag">Push notifications</span></div></div><div class="srv-r"><div><div class="srv-pl">From</div><div class="srv-price">$1,200</div><div class="srv-time">6 to 10 weeks</div></div><button class="btn btn-k btn-sm" onclick="openModal('mobile')">Get started</button></div></div></div>
+        <div class="srv-item" data-cat="content"><div class="srv-top"><div class="srv-l"><div class="srv-code"><span class="srv-cat-dot dot-content"></span>07 / Content</div><div class="srv-name">Copywriting and SEO</div><div class="srv-desc">Words that sell and pages that rank. We write website copy, blog content, and newsletters that bring people in and keep them engaged long-term.</div><div class="tags"><span class="tag">SEO</span><span class="tag">Blog writing</span><span class="tag">Web copy</span><span class="tag">Newsletters</span></div></div><div class="srv-r"><div><div class="srv-pl">From</div><div class="srv-price">$80</div><div class="srv-time">Per project</div></div><button class="btn btn-k btn-sm" onclick="openModal('seo')">Get started</button></div></div></div>
+        <div class="srv-item" data-cat="web"><div class="srv-top"><div class="srv-l"><div class="srv-code"><span class="srv-cat-dot dot-web"></span>08 / Revamp</div><div class="srv-name">Website Redesign</div><div class="srv-desc">Your current website is costing you clients. We redesign it to convert, perform, and represent your business at the level it deserves.</div><div class="tags"><span class="tag">Redesign</span><span class="tag">Performance</span><span class="tag">SEO audit</span><span class="tag">Mobile-first</span></div></div><div class="srv-r"><div><div class="srv-pl">From</div><div class="srv-price">$200</div><div class="srv-time">1 to 2 weeks</div></div><button class="btn btn-k btn-sm" onclick="openModal('revamp')">Get started</button></div></div></div>
+        <div class="srv-item" data-cat="design"><div class="srv-top"><div class="srv-l"><div class="srv-code"><span class="srv-cat-dot dot-design"></span>10 / Design</div><div class="srv-name">Product Design</div><div class="srv-desc">UI/UX design for digital products. Wireframes, user flows, high-fidelity mockups, and design systems   everything your product needs to feel effortless and look world-class before a line of code is written.</div><div class="tags"><span class="tag">Figma</span><span class="tag">UI/UX</span><span class="tag">Design systems</span><span class="tag">Prototyping</span><span class="tag">User research</span></div></div><div class="srv-r"><div><div class="srv-pl">From</div><div class="srv-price">$220</div><div class="srv-time">1 to 2 weeks</div></div><button class="btn btn-k btn-sm" onclick="openModal('productdesign')">Get started</button></div></div></div>
+        <div class="srv-item" data-cat="app"><div class="srv-top"><div class="srv-l"><div class="srv-code"><span class="srv-cat-dot dot-app"></span>11 / Development</div><div class="srv-name">Product Development</div><div class="srv-desc">End-to-end product development for startups and founders. Strategy, architecture, design, and build   one studio, one timeline, one outcome. We take your idea from concept to a product people actually use.</div><div class="tags"><span class="tag">Full-stack</span><span class="tag">Strategy</span><span class="tag">Architecture</span><span class="tag">Launch</span></div></div><div class="srv-r"><div><div class="srv-pl">From</div><div class="srv-price">$900</div><div class="srv-time">4 to 12 weeks</div></div><button class="btn btn-k btn-sm" onclick="openModal('productdev')">Get started</button></div></div></div>
+        <div class="srv-item" data-cat="design"><div class="srv-top"><div class="srv-l"><div class="srv-code"><span class="srv-cat-dot dot-design"></span>12 / Presentations</div><div class="srv-name">Pitch Deck and Presentation Design</div><div class="srv-desc">Investor decks, sales decks, and marketing presentations designed to close. Clear narrative, premium visuals, and the kind of finish that makes people lean forward. Built in Figma, delivered as PDF and editable PowerPoint.</div><div class="tags"><span class="tag">Figma</span><span class="tag">PowerPoint</span><span class="tag">Investor decks</span><span class="tag">Sales decks</span><span class="tag">Brand decks</span></div></div><div class="srv-r"><div><div class="srv-pl">From</div><div class="srv-price">$150</div><div class="srv-time">3 to 5 days</div></div><button class="btn btn-k btn-sm" onclick="openModal('presentation')">Get started</button></div></div></div>
+        <div class="srv-item" data-cat="ai"><div class="srv-top"><div class="srv-l"><div class="srv-code"><span class="srv-cat-dot dot-ai"></span>09 / AI</div><div class="srv-name">AI-Powered Features</div><div class="srv-desc">Intelligent content generation, smart search, voice-to-action inputs, automated workflows. Added to any new or existing product. Real intelligence, not gimmicks.</div><div class="tags"><span class="tag">Claude API</span><span class="tag">OpenAI</span><span class="tag">Voice input</span><span class="tag">Automations</span></div></div><div class="srv-r"><div><div class="srv-pl">From</div><div class="srv-price">$150</div><div class="srv-time">Add-on</div></div><button class="btn btn-k btn-sm" onclick="openModal('ai')">Get started</button></div></div></div>
+      </div>
+      <div style="margin-top:80px;">
+        <div class="ey rv">Our process</div>
+        <h2 class="sh rv" style="font-size:clamp(30px,3.5vw,46px);margin-bottom:0;">Simple from start <em>to launch.</em></h2>
+        <div class="proc-list rv">
+          <div class="proc"><div class="pn">01</div><div><div class="pt">Free strategy call</div><div class="pd">30 minutes. We understand what you need. You leave with clarity on what to build and what it costs, whether we work together or not.</div><span class="pday">Day zero</span></div></div>
+          <div class="proc"><div class="pn">02</div><div><div class="pt">Fixed proposal</div><div class="pd">Within 48 hours: features, stack, timeline, and a single fixed price. Everything agreed before you pay a cent.</div><span class="pday">48 hours later</span></div></div>
+          <div class="proc"><div class="pn">03</div><div><div class="pt">Build with live access</div><div class="pd">Staging URL in week one. Real progress, visible in real time. Nothing ships without your approval.</div><span class="pday">Week one onwards</span></div></div>
+          <div class="proc"><div class="pn">04</div><div><div class="pt">Launch and full handover</div><div class="pd">Live on your domain. Full codebase, documentation, walkthrough. Everything yours, no strings attached.</div><span class="pday">Delivery day</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="fts"></div>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="pg-about">
+  <div style="padding-top:92px;padding-bottom:96px;">
+    <div class="w">
+      <div class="ey rv">About Webmify</div>
+      <h1 class="about-h rv">We are obsessed<br><em>with your brand.</em></h1>
+      <div class="hr" style="margin-top:48px;"></div>
+      <div class="about-grid">
+        <div class="rv" style="position:relative;">
+  <div style="border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--bg);height:100%;min-height:520px;display:flex;flex-direction:column;">
+
+    <!-- Panel header -->
+    <div style="padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg2);">
+      <div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);">What we do</div>
+      <div style="display:flex;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#ff5f57;"></span><span style="width:8px;height:8px;border-radius:50%;background:#febc2e;"></span><span style="width:8px;height:8px;border-radius:50%;background:#28c840;"></span></div>
+    </div>
+
+    <!-- Scrollable cards grid -->
+    <div style="flex:1;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start;overflow-y:auto;">
+
+      <div onclick="go('services')" style="border-radius:12px;padding:18px;background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;cursor:none;transition:transform .2s;position:relative;overflow:hidden;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;top:-10px;right:-10px;width:60px;height:60px;background:rgba(255,255,255,.04);border-radius:50%;"></div>
+        <div style="margin-bottom:8px;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="rgba(255,255,255,.7)" stroke-width="1.4"/><path d="M10 1.5C10 1.5 7 5 7 10s3 8.5 3 8.5M10 1.5C10 1.5 13 5 13 10s-3 8.5-3 8.5M1.5 10h17" stroke="rgba(255,255,255,.7)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:-.5px;margin-bottom:4px;">Websites</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.45);line-height:1.5;">Fast. SEO-ready. Converts visitors.</div>
+        <div style="margin-top:10px;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(232,255,71,.7);">From $150</div>
+      </div>
+
+      <div onclick="go('services')" style="border-radius:12px;padding:18px;background:linear-gradient(135deg,#064e3b,#065f46);color:#fff;cursor:none;transition:transform .2s;position:relative;overflow:hidden;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;top:-10px;right:-10px;width:60px;height:60px;background:rgba(255,255,255,.04);border-radius:50%;"></div>
+        <div style="margin-bottom:8px;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 2h2l2.4 9.6a2 2 0 001.9 1.4h7.3a2 2 0 001.9-1.4L19 7H5" stroke="rgba(255,255,255,.7)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="17.5" r="1.5" fill="rgba(255,255,255,.7)"/><circle cx="15.5" cy="17.5" r="1.5" fill="rgba(255,255,255,.7)"/></svg></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:-.5px;margin-bottom:4px;">E-commerce</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.45);line-height:1.5;">Own your store. Zero platform fees.</div>
+        <div style="margin-top:10px;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(110,231,183,.8);">From $250</div>
+      </div>
+
+      <div onclick="go('services')" style="border-radius:12px;padding:18px;background:linear-gradient(135deg,#1e1b4b,#312e81);color:#fff;cursor:none;transition:transform .2s;position:relative;overflow:hidden;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;top:-10px;right:-10px;width:60px;height:60px;background:rgba(255,255,255,.04);border-radius:50%;"></div>
+        <div style="margin-bottom:8px;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M11 2L4 11h7l-2 7 9-10h-7l2-6z" stroke="rgba(255,255,255,.7)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:-.5px;margin-bottom:4px;">Web Apps</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.45);line-height:1.5;">Full MVPs. Live in 3 to 4 weeks.</div>
+        <div style="margin-top:10px;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(165,180,252,.8);">From $500</div>
+      </div>
+
+      <div onclick="go('services')" style="border-radius:12px;padding:18px;background:linear-gradient(135deg,#7c2d12,#9a3412);color:#fff;cursor:none;transition:transform .2s;position:relative;overflow:hidden;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;top:-10px;right:-10px;width:60px;height:60px;background:rgba(255,255,255,.04);border-radius:50%;"></div>
+        <div style="margin-bottom:8px;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="5" y="1" width="10" height="18" rx="2.5" stroke="rgba(255,255,255,.7)" stroke-width="1.4"/><path d="M9 15.5h2" stroke="rgba(255,255,255,.7)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:-.5px;margin-bottom:4px;">Mobile Apps</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.45);line-height:1.5;">iOS and Android. One codebase.</div>
+        <div style="margin-top:10px;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(254,215,170,.8);">From $800</div>
+      </div>
+
+      <div onclick="go('services')" style="border-radius:12px;padding:18px;background:linear-gradient(135deg,#4a044e,#701a75);color:#fff;cursor:none;transition:transform .2s;position:relative;overflow:hidden;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="margin-bottom:8px;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="rgba(255,255,255,.7)" stroke-width="1.4"/><path d="M10 6v8M6 10h8" stroke="rgba(255,255,255,.7)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:-.5px;margin-bottom:4px;">Product Design</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.45);line-height:1.5;">UI/UX, systems, Figma handoff.</div>
+        <div style="margin-top:10px;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(240,171,252,.8);">From $220</div>
+      </div>
+
+      <div onclick="go('services')" style="border-radius:12px;padding:18px;background:linear-gradient(135deg,#713f12,#92400e);color:#fff;cursor:none;transition:transform .2s;position:relative;overflow:hidden;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="margin-bottom:8px;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="rgba(255,255,255,.7)" stroke-width="1.4"/><path d="M7 13V10M10 13V7M13 13V11" stroke="rgba(255,255,255,.7)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:-.5px;margin-bottom:4px;">Pitch Decks</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.45);line-height:1.5;">Investor and sales decks that close.</div>
+        <div style="margin-top:10px;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(253,230,138,.8);">From $150</div>
+      </div>
+
+      <!-- Full width: SaaS + SEO -->
+      <div onclick="go('services')" style="border-radius:12px;padding:18px;background:linear-gradient(135deg,#0c4a6e,#075985);color:#fff;cursor:none;transition:transform .2s;grid-column:span 2;display:flex;align-items:center;gap:16px;" onmouseover="this.style.transform='scale(1.01)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="flex-shrink:0;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 6 6 6 12a6 6 0 0012 0c0-6-6-10-6-10z" stroke="rgba(255,255,255,.7)" stroke-width="1.4"/><path d="M8 16l-4 4M16 16l4 4M12 18v3" stroke="rgba(255,255,255,.7)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <div style="flex:1;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:-.5px;margin-bottom:3px;">SaaS Platforms</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.45);">Subscription billing, multi-tenant, admin panel. The full stack.</div>
+        </div>
+        <div style="font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(125,211,252,.8);white-space:nowrap;">From $800</div>
+      </div>
+
+    </div>
+
+    <!-- Footer strip -->
+    <div style="padding:12px 20px;border-top:1px solid var(--border);background:var(--bg2);display:flex;align-items:center;justify-content:space-between;">
+      <div style="font-size:10px;color:var(--muted);font-weight:300;">12 services total</div>
+      <button onclick="go('services')" style="font-size:10px;font-weight:600;color:var(--ink);background:none;border:none;cursor:none;letter-spacing:.3px;">View all services</button>
+    </div>
+
+  </div>
+</div>
+        <div class="about-text">
+          <p class="ap rv">Webmify exists for one reason: to make your brand impossible to ignore online. Every designer, developer, writer, and strategist on our team works toward a single outcome   your business, performing at its full potential on the web.</p>
+          <p class="ap rv">No templates. No juniors. No accounts manager passing your brief down a chain. Just senior-level craft applied to your specific problem   from the first call to the final delivery.</p>
+          <p class="ap rv">We cover every discipline your digital presence demands. <strong>Product designers</strong> who make things beautiful and functional. <strong>Engineers</strong> who build for performance and scale. <strong>SEO strategists</strong> who drive the right traffic. <strong>Copywriters</strong> who write for your reader, not your brief. <strong>Presentation designers</strong> who turn your ideas into decks that close deals.</p>
+          <div class="team-grid rv">
+            <div class="team-card"><div class="tc-role">Design</div><div class="tc-title">Product Designers</div><div class="tc-desc">UI, UX, and brand systems that are both beautiful and built to convert.</div></div>
+            <div class="team-card"><div class="tc-role">Engineering</div><div class="tc-title">Full-stack Developers</div><div class="tc-desc">Next.js, TypeScript, PostgreSQL, React Native. Production-grade, always.</div></div>
+            <div class="team-card"><div class="tc-role">Growth</div><div class="tc-title">SEO Strategists</div><div class="tc-desc">On-page, technical, and content SEO that drives organic traffic that converts.</div></div>
+            <div class="team-card"><div class="tc-role">Content</div><div class="tc-title">Copywriters</div><div class="tc-desc">Web copy, blog content, and newsletters written to engage and persuade.</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:80px;">
+        <div class="ey rv">Our products</div>
+        <h2 class="sh rv" style="font-size:clamp(30px,3.5vw,46px);margin-bottom:0;">Products we have <em>shipped.</em></h2>
+        <div class="ventures rv">
+          <div class="vent"><div class="vl">Live / Full-stack Web App</div><div class="vn">Conceivr</div><div class="vd">A founder development platform with bootcamp, Build Room, mentor assignment, multi-role portals, admin dashboard, and real-time notifications. Shipped and used daily.</div><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><span class="vbadge vbl">Live at conceivr.com</span><a href="https://conceivr.com" target="_blank" style="font-size:11px;color:var(--muted);font-weight:500;text-decoration:underline;text-underline-offset:3px;">Visit</a></div></div>
+          <div class="vent"><div class="vl">In Development / SaaS Platform</div><div class="vn">Classinton</div><div class="vd">An AI-powered course platform builder. Creators launch fully-branded online schools with subdomains, payments, and TurboBuild, an AI feature that converts a voice note into a full course.</div><span class="vbadge vbs">Launching soon</span></div>
+        </div>
+      </div>
+      <div style="margin-top:80px;">
+        <div class="ey rv">What we stand for</div>
+        <div class="values rv">
+          <div class="val"><div class="vnum">01</div><div class="vt">Results, not deliverables</div><div class="vd2">We are not done when the project ships. We are done when it performs.</div></div>
+          <div class="val"><div class="vnum">02</div><div class="vt">Honesty over comfort</div><div class="vd2">We tell you what your product needs, not what sounds good on a proposal.</div></div>
+          <div class="val"><div class="vnum">03</div><div class="vt">Speed is a feature</div><div class="vd2">Slow delivery kills momentum. We move fast because it matters for your business.</div></div>
+          <div class="val"><div class="vnum">04</div><div class="vt">Full ownership, always</div><div class="vd2">Code, domain, data. Yours on delivery. No lock-in. No dependency. Ever.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="fta"></div>
+</div>
+
+<!-- BLOG -->
+<div class="page" id="pg-blog">
+  <div style="padding-top:92px;">
+    <div class="w">
+      <div class="ey rv">The Webmify Edit</div>
+      <h1 class="blog-h rv">On building,<br><em>business, and the web.</em></h1>
+      <p class="blog-intro rv">Clear thinking on digital products, SEO, development, and what it actually takes to scale a business online.</p>
+      <div class="posts">
+        <div class="post rv">
+          <div class="pthumb pt1"><svg width="52" height="52" viewBox="0 0 52 52" fill="none"><rect x="8" y="8" width="36" height="36" rx="5" stroke="var(--ink)" stroke-width="1.5" opacity=".35"/><path d="M16 26h20M16 20h20M16 32h12" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" opacity=".35"/></svg></div>
+          <div class="pbody"><div class="pmeta"><span class="pcat">Product</span><span class="pdate">June 2026</span></div><div class="ptitle">Why your business needs a web app, not just a website</div><div class="pex">Most business owners think a website is enough. Here is why the difference between a website and a web app could determine whether your business scales or stalls.</div><div class="pfoot"><div class="pby">Webmify Editorial</div><div class="pread">5 min</div></div></div>
+        </div>
+        <div class="post rv">
+          <div class="pthumb pt2"><svg width="52" height="52" viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="16" stroke="var(--ink)" stroke-width="1.5" opacity=".35"/><path d="M19 26l4 4 10-10" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".35"/></svg></div>
+          <div class="pbody"><div class="pmeta"><span class="pcat">Development</span><span class="pdate">May 2026</span></div><div class="ptitle">How AI-assisted development changed what is possible, and what it costs</div><div class="pex">What used to take three months now takes three weeks. Here is what changed and how to take advantage before your competitors do.</div><div class="pfoot"><div class="pby">Webmify Editorial</div><div class="pread">6 min</div></div></div>
+        </div>
+        <div class="post rv">
+          <div class="pthumb pt3"><svg width="52" height="52" viewBox="0 0 52 52" fill="none"><path d="M12 40L26 12l14 28H12z" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round" opacity=".35"/><path d="M19 32h14" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" opacity=".35"/></svg></div>
+          <div class="pbody"><div class="pmeta"><span class="pcat">Strategy</span><span class="pdate">April 2026</span></div><div class="ptitle">The four questions to answer before you build anything on the web</div><div class="pex">Most projects fail before a single line of code is written. These four questions, asked in the right order, separate products that work from money wasted.</div><div class="pfoot"><div class="pby">Webmify Editorial</div><div class="pread">7 min</div></div></div>
+        </div>
+      </div>
+      <div class="nl rv">
+        <div class="nl-t"><div class="nl-title">The Webmify Edit</div><div class="nl-sub">Our newsletter. Clear, useful thinking on building and growing online.</div></div>
+        <div class="nl-form"><input type="email" class="nl-in" placeholder="your@email.com" id="nlin"><button class="btn btn-k btn-sm" onclick="subnl()">Subscribe</button></div>
+      </div>
+      <div style="height:80px;"></div>
+    </div>
+  </div>
+  <div id="ftb"></div>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="pg-contact">
+  <div style="padding-top:92px;">
+    <div class="w">
+      <div class="ey rv">Get in touch</div>
+      <h1 class="contact-h rv">Let's talk about<br><em>your project.</em></h1>
+      <p style="font-size:14.5px;color:var(--muted);font-weight:300;max-width:480px;line-height:1.85;margin-bottom:52px;" class="rv">
+        Tell us what you are building. We will get back to you within 24 hours with a clear next step.
+      </p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;padding-bottom:96px;" class="contact-split">
+        <!-- LEFT: SHORT FORM -->
+        <div class="cform rv">
+          <div id="fw">
+            <div class="cform-h">Send a project brief</div>
+            <div class="f2">
+              <div class="fl"><label>First name</label><input type="text" class="fi" placeholder="John" id="fn"></div>
+              <div class="fl"><label>Last name</label><input type="text" class="fi" placeholder="Smith" id="ln"></div>
+            </div>
+            <div class="fl"><label>Email or WhatsApp number</label><input type="text" class="fi" placeholder="email@company.com or +1 234 567 8900" id="fe"></div>
+            <div class="fl"><label>What do you need?</label>
+              <select class="fsel fi" id="fs">
+                <option value="">Select a service</option>
+                <option>Business Website</option>
+                <option>E-commerce Store</option>
+                <option>Landing Page</option>
+                <option>Web App MVP</option>
+                <option>SaaS Platform</option>
+                <option>Mobile Application</option>
+                <option>Product Design</option>
+                <option>Pitch Deck / Presentation</option>
+                <option>Copywriting or SEO</option>
+                <option>Website Redesign</option>
+                <option>AI-Powered Feature</option>
+                <option>Not sure yet   need advice</option>
+              </select>
+            </div>
+            <div class="fl"><label>Tell us briefly what you're building</label>
+              <textarea class="fta" placeholder="A quick overview   what it is, who it's for, and your rough timeline." id="fm" style="min-height:80px;"></textarea>
+            </div>
+            <button class="fsub" onclick="subform()">Send brief</button>
+            <div class="fnote">We reply within 24 hours. No pitch. No pressure.</div>
+          </div>
+          <div class="fsuccess" id="fsuc">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" style="margin-bottom:14px;"><circle cx="22" cy="22" r="20" stroke="var(--green)" stroke-width="2"/><path d="M13 22l6 6 12-12" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="fst">Brief received.</div>
+            <div class="fss">We will be in touch within 24 hours.</div>
+          </div>
+        </div>
+
+        <!-- RIGHT: DIRECT CONTACT + CHANNELS -->
+        <div class="rv">
+          <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:9px;"><span style="width:14px;height:1px;background:var(--muted2);display:block;"></span>Or reach us directly</div>
+
+          <!-- WHATSAPP -->
+          <a href="https://wa.link/5v3h95" target="_blank" style="display:flex;align-items:center;gap:16px;padding:20px 22px;border:1px solid var(--border);border-radius:12px;background:var(--bg);text-decoration:none;transition:border-color .2s,transform .2s;margin-bottom:12px;cursor:none;" onmouseover="this.style.borderColor='var(--ink)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+            <div style="width:44px;height:44px;border-radius:10px;background:#dcfce7;border:1px solid #bbf7d0;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M17.04 2.96A9.93 9.93 0 0010 0C4.48 0 0 4.48 0 10c0 1.76.46 3.44 1.34 4.9L0 20l5.27-1.32A10 10 0 0010 20c5.52 0 10-4.48 10-10 0-2.68-1.04-5.18-2.96-7.04zM10 18.33a8.28 8.28 0 01-4.21-1.14l-.3-.18-3.13.82.84-3.05-.2-.32A8.33 8.33 0 1110 18.33zm4.57-6.23c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.57.12-.17.25-.65.8-.8.97-.15.17-.29.19-.54.07-.25-.12-1.06-.39-2.02-1.25-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.57-1.37-.78-1.87-.2-.49-.41-.42-.57-.43H6.5c-.15 0-.4.06-.61.31-.21.25-.8.79-.8 1.92 0 1.14.82 2.24.94 2.39.12.15 1.62 2.47 3.93 3.47.55.24.98.38 1.31.48.55.18 1.05.15 1.45.09.44-.07 1.36-.56 1.55-1.1.19-.54.19-1 .13-1.1-.06-.1-.22-.16-.47-.28z" fill="#22c55e"/></svg>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:13.5px;font-weight:600;letter-spacing:-.2px;color:var(--ink);margin-bottom:2px;">Chat on WhatsApp</div>
+              <div style="font-size:11.5px;color:var(--muted);font-weight:300;">Get a reply within hours. Fastest channel.</div>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="var(--muted2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+
+          <!-- TELEGRAM -->
+          <a href="https://t.me/webmifystudio" target="_blank" style="display:flex;align-items:center;gap:16px;padding:20px 22px;border:1px solid var(--border);border-radius:12px;background:var(--bg);text-decoration:none;transition:border-color .2s,transform .2s;margin-bottom:12px;cursor:none;" onmouseover="this.style.borderColor='var(--ink)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+            <div style="width:44px;height:44px;border-radius:10px;background:#e0f2fe;border:1px solid #bae6fd;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm4.92 6.81l-1.68 7.92c-.13.58-.47.72-.95.45l-2.62-1.93-1.27 1.22c-.14.14-.26.26-.53.26l.19-2.67 4.85-4.38c.21-.19-.05-.29-.33-.1L5.43 12.3 2.87 11.5c-.57-.18-.58-.57.12-.84l9.63-3.71c.47-.17.89.12.3.86z" fill="#0ea5e9"/></svg>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:13.5px;font-weight:600;letter-spacing:-.2px;color:var(--ink);margin-bottom:2px;">Message on Telegram</div>
+              <div style="font-size:11.5px;color:var(--muted);font-weight:300;">Great for file sharing and longer conversations.</div>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="var(--muted2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+
+          <!-- EMAIL -->
+          <a href="mailto:webmifystudio@gmail.com" style="display:flex;align-items:center;gap:16px;padding:20px 22px;border:1px solid var(--border);border-radius:12px;background:var(--bg);text-decoration:none;transition:border-color .2s,transform .2s;margin-bottom:24px;cursor:none;" onmouseover="this.style.borderColor='var(--ink)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+            <div style="width:44px;height:44px;border-radius:10px;background:#fef3c7;border:1px solid #fde68a;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="4" width="18" height="13" rx="2" stroke="#d97706" stroke-width="1.5"/><path d="M1 7l9 5.5L19 7" stroke="#d97706" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:13.5px;font-weight:600;letter-spacing:-.2px;color:var(--ink);margin-bottom:2px;">Send an email</div>
+              <div style="font-size:11.5px;color:var(--muted);font-weight:300;">webmifystudio@gmail.com</div>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="var(--muted2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+
+          <!-- AVAILABILITY -->
+          <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);padding:16px 20px;background:var(--bg2);border-radius:10px;border:1px solid var(--border);">
+            <span style="width:7px;height:7px;background:var(--green);border-radius:50%;flex-shrink:0;animation:pk 2.5s ease-in-out infinite;display:inline-block;"></span>
+            Currently available for new projects. Typical response within 24 hours.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="ey rv">Common questions</div>
+      <div class="faqlist rv">
+        <div class="faq-item"><button class="faq-q" onclick="faq(this)">Do you work with clients worldwide?<span class="faq-ic"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">Yes, fully remote and worldwide. International clients pay in USD via Stripe or Wise. The strategy call is a video call. No in-person meeting required.</div></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="faq(this)">How do payments work?<span class="faq-ic"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">50% upfront, 50% on delivery. For larger projects we structure milestone-based payments. We accept Stripe, Wise, and bank transfer. Everything agreed in writing before we start.</div></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="faq(this)">Who owns the code when we are done?<span class="faq-ic"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">You do. 100%. Full codebase, assets, and credentials handed over on delivery. No lock-in. No ongoing dependency on us unless you choose it.</div></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="faq(this)">I am not sure what I need yet. Can we still talk?<span class="faq-ic"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">That is exactly what the free call is for. Come with a problem or a rough vision. You will leave knowing what to build and what it costs.</div></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="faq(this)">Can you build mobile apps?<span class="faq-ic"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round"/></svg></span></button><div class="faq-a"><div class="faq-ai">Yes. We use React Native, which means one codebase that runs natively on both iOS and Android. From fintech to e-commerce to productivity apps, we design and build them properly.</div></div></div>
+      </div>
+      <div style="height:80px;"></div>
+    </div>
+  </div>
+  <div id="ftc"></div>
+</div>
+</div>
+<script>
+const cd=document.getElementById('cDot'),cr=document.getElementById('cRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop);})();
+const FT=`<footer><div class="ft-inner"><div class="ft-grid"><div><div style="margin-bottom:12px;display:flex;align-items:center;gap:0;">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAA8CAYAAADmBa1FAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAF50lEQVR42u3YXWxcRxUH8P85M/dj1/bajuM4clzSNEECSlUkRMTHA8pjKVBFqS2ktEIVykNASREIaMWDvUKCSqCUUlGQqlaKqERjAxWiIn2jUR+qopY2pcVpgqCJU2zqr9je9d175845PNhODQWJB2CNPD/p6t6rnbsze+bM7MwFgiAIgiAIgiAIgiAIgiAIgiAIgmBLonZWPj4MMzz8Lxo2Ar/5XhWMiU3tHQYwBqU6ZPNjOg7+p1/4+rvKBiGj/0N0FEx1yC+/mnxnd68/WAp8ZGFMDOmqgFc9T7841XX82HfnV2QcBsOQyccqx4d2lUeyXD0ZoFohc2U2fvT9dzfPPDsGc6iO8jff69y5b7d7NDa+lq1C8xaoyOEtga/MRi986tvZNzfq/l//ZtuOQI+tnzNH5zPHWVZAkhjMHnAeIGtl6u1Oo5hfG/Ij0Oe/b5drHXqu6UQABhjcWLUFEVTHoQBw8Woa7emTlxsZabEqVBRAXkBSVuvEvL657m0R6A2T013P9nVeO16rijEWiCwoiuH7+9Qc/shMV/00vkF1yO9+2PXxfTfl93rSVocBw3hARN97QD59/vGOSzTS/L0q6E9PrjzQ310eWFhgX5AYZ6AVC1pYNo1Tz/c9ADQwVofWt0ug69eH7uzCtWb6YwAVz0BsQVEJFQUt5jy/PrXp0qpdbjaKHzklFYDBArYskSFaalZy1SadPHkg/sKt02dRoLrSBFoFk8ugEYBmrvNf2nXZnQOIsJb92yajdRyGRlD87Mtsd/W6ky2vpbVk4gSIIvUfGND4t49U84NfzM7u39t8pLbDdwlBYcFggBSejfB+bRwhwu2TT7x1zw0D7vjinLoaYFKjKJiE1dg35+ITn5so/PgwzMjE369mtsPyjgDoQ0dRG+yPDidWU2bAJKAkIuntYfprZi9qVLmwp3flDhDUxCAYFKJgJlhVKBR65e3oqW4rB3d0+KHFRSDPQL7wKh50rWlXmvOtn99zGq12TpPtnKN1fQWw/Ov7zScH+8qPthwkTsAmUnR1ekQpzWTS+vPQbv+xwkE5AScJBgTkvMeClCqRBRVZ/OGeqv9gYnyvBcFVgDyHrzKsTOPJkdNorY8g386sal+k1+ZMjB4e6L/5huWROPVsrUEUeUQRYCyYDYy1cCYBW2PyfXvdmFeeujJtHiePxIv3ZcmxlFSWpRfJDfIcgHgsNUz53GTliYefWVjeGEHbMaM3elkrtsh7a+Vna1UfGStqY1AUASYCbAS1ETFZaJq6fVIQsZX9QwNyonQ0I16oLEV8DvIOcLkgz6FGhWKjS8COx4CFtm9YbJvr19FR8H31xaWHPl+9/5YhOVKoqrHgKAaYgciymggGLPmNQ0bnFvlsmtJAZ4fsvTolF0CIxauUJVCWjNIBrhCxMHjpUu0nDz/zx3x0FFxv8/a73YHGGIA6gMEetTY2N6lIK46ZYwtlCzIxyEYQqO1lL4em3qK7BwdpoLuqL6UpjxNRy4uQdwxXAJ4AVlIiTt4zVCi2CNPuBtTPQVVBN99WXr3t1ri/lspgM1MxhCLLlZtNjUmo0VOBzi7S0ie+nv9g54fc7J7S3N4R4XJjBVm+SmhlkEZD2OXqOmL2F2fiXx19sPGcjoIPbYGXSbwVentsDKQKqkb+L90Vfq0j5VfI0IXOlM/v7OYXYjZvuELvWM3ozPqGp8ya/uk8188A5lIcYTJJ8Fqtyi+nCb8aW7yxo1rOKEBjWySjaQu1QwHCU18xZ/o6pccJC5MwEyRNkbacueXqUvK+u0415hTAT+9NbtyzU85H7F90BZwXkCp8YmGnl+zlOx8sjmkbd4Jbbo7evKYGFBML9tWidMdK7w0RETPUlFQ2Mv7a0VONubVyANXzN5++L/5Wb5VO5E5ZBKRrneW8N78YHQVP/AGEifatnf/P3t7S9Xvd9ME71/QPR/BvGR+GIVoP26bz+PC7/7ivl6V3yqqCNrI+CIIgCIIgCIIgCIIgCIIgCIIgCIIgCIL/hr8BGCO9s3fUepIAAAAASUVORK5CYII=" alt="W" style="height:24px;width:auto;display:block;flex-shrink:0;position:relative;z-index:1;filter:brightness(1.1);">
+    <span style="font-family:'Geist',system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:-.4px;color:rgba(248,248,245,.95);margin-left:-4px;position:relative;z-index:0;line-height:1;">Webmify</span>
+  </div><div class="ft-tagline">Own your space online.</div></div><div><div class="ft-col-h">Navigate</div><ul class="ft-links"><li><a href="#" onclick="go('home');return false;">Home</a></li><li><a href="#" onclick="go('services');return false;">Services</a></li><li><a href="#" onclick="go('about');return false;">About</a></li><li><a href="#" onclick="go('blog');return false;">Blog</a></li><li><a href="#" onclick="go('contact');return false;">Contact</a></li></ul></div><div><div class="ft-col-h">Services</div><ul class="ft-links"><li><a href="#" onclick="go('services');return false;">Business Website</a></li><li><a href="#" onclick="go('services');return false;">Web App MVP</a></li><li><a href="#" onclick="go('services');return false;">SaaS Platform</a></li><li><a href="#" onclick="go('services');return false;">Mobile App</a></li><li><a href="#" onclick="go('services');return false;">Copywriting and SEO</a></li></ul></div><div><div class="ft-col-h">Connect</div><ul class="ft-links">
+<li><a href="mailto:webmifystudio@gmail.com">webmifystudio@gmail.com</a></li>
+<li><a href="https://wa.link/5v3h95" target="_blank">WhatsApp</a></li>
+<li><a href="https://t.me/webmifystudio" target="_blank">Telegram</a></li>
+<li><a href="https://linkedin.com/in/webmify" target="_blank">LinkedIn</a></li>
+<li><a href="https://instagram.com/webmify" target="_blank">Instagram</a></li>
+<li><a href="https://twitter.com/Webmify" target="_blank">X (Twitter)</a></li>
+</ul></div></div></div><div class="ft-bot"><span>&copy; 2026 Webmify</span><span class="ft-avail">Accepting new projects</span></div></footer>`;
+['fth','fts','fta','ftb','ftc'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=FT;});
+
+function openCalendly(){
+  if(typeof Calendly !== 'undefined'){
+    Calendly.initPopupWidget({url:'https://calendly.com/webmify/strategy-call'});
+  } else {
+    window.open('https://calendly.com/webmify/strategy-call','_blank');
+  }
+  return false;
+}
+
+function go(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  const pg=document.getElementById('pg-'+id);if(pg)pg.classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.querySelectorAll('[data-p]').forEach(a=>a.classList.toggle('act',a.dataset.p===id));
+  setTimeout(watch,80);
+}
+function watch(){
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*55);io.unobserve(e.target);}});
+  },{threshold:0.07});
+  document.querySelectorAll('.page.on .rv:not(.vis)').forEach(el=>io.observe(el));
+}
+watch();
+function sd(id,tab){
+  document.querySelectorAll('.dtab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.demo-panel').forEach(p=>p.classList.remove('active'));
+  tab.classList.add('active');
+  const panel=document.getElementById('demo-'+id);if(panel)panel.classList.add('active');
+}
+let curScreen='home';
+function mobS(id){
+  if(id===curScreen)return;
+  const cur=document.getElementById('ms-'+curScreen);
+  const nxt=document.getElementById('ms-'+id);
+  if(cur){cur.classList.remove('ms-on');cur.classList.add('ms-left');}
+  if(nxt){nxt.classList.remove('ms-right','ms-left');nxt.classList.add('ms-on');}
+  curScreen=id;
+  document.querySelectorAll('.mnb').forEach(b=>b.classList.remove('act'));
+  document.querySelectorAll('.mnb').forEach(b=>{if(b.getAttribute('onclick')&&b.getAttribute('onclick').includes("'"+id+"'"))b.classList.add('act');});
+}
+function faq(btn){
+  const item=btn.closest('.faq-item'),open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+}
+function mobOpen(){document.getElementById('mobMenu').classList.toggle('open');}
+function subform(){var fn=document.getElementById('fn')?document.getElementById('fn').value.trim():'';var ln=document.getElementById('ln')?document.getElementById('ln').value.trim():'';var fe=document.getElementById('fe')?document.getElementById('fe').value.trim():'';var fs=document.getElementById('fs')?document.getElementById('fs').value:'';var fm=document.getElementById('fm')?document.getElementById('fm').value.trim():'';if(!fn||!fe||!fs){alert('Please fill in your name, contact, and the service you need.');return;}var nl='%0A';var sub=encodeURIComponent('Project Brief from '+fn+' '+ln+' via Webmify');var bod='Name: '+encodeURIComponent(fn+' '+ln)+nl+'Contact: '+encodeURIComponent(fe)+nl+'Service: '+encodeURIComponent(fs)+nl+'Brief: '+encodeURIComponent(fm)+nl+nl+'Sent from webmify.site';window.open('mailto:webmifystudio@gmail.com?subject='+sub+'&body='+bod,'_blank');var fw=document.getElementById('fw');var fsuc=document.getElementById('fsuc');if(fw)fw.style.display='none';if(fsuc)fsuc.classList.add('ok');}
+
+function subnl(){
+  const v=document.getElementById('nlin').value.trim();
+  if(!v||!v.includes('@')){alert('Please enter a valid email.');return;}
+  document.getElementById('nlin').value='';
+  alert('Subscribed. You will hear from us when there is something worth reading.');
+}
+const modalData={
+  website:{title:'Business Website',sub:'What we consider. What we deliver.',body:`<div class="sm-section"><div class="sm-section-h">The possibilities</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Marketing Website</div><div class="sm-card-d">Multi-page site presenting your brand, services, and story. Built to convert visitors into clients before you say a word.</div></div><div class="sm-card"><div class="sm-card-h">Portfolio Site</div><div class="sm-card-d">A curated showcase for creative professionals, consultants, and agencies who let their work speak for them.</div></div><div class="sm-card"><div class="sm-card-h">Corporate Site</div><div class="sm-card-d">Enterprise-grade presentation that conveys scale, trust, and authority from the very first click.</div></div><div class="sm-card"><div class="sm-card-h">Personal Brand</div><div class="sm-card-d">For founders, speakers, and professionals building a platform that works harder than a LinkedIn profile.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider before we build</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">Who is this for?</div><div class="sm-c-d">We map your audience before we design anything. Who lands on this page, what do they want, and what would make them act?</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">What is the one goal?</div><div class="sm-c-d">Every page has a primary action. We design every element to move visitors toward that action without friction.</div></div></div><div class="sm-c-item"><div class="sm-c-num">03</div><div><div class="sm-c-t">How will people find it?</div><div class="sm-c-d">SEO structure, page speed, and metadata are built in from day one, not added as an afterthought.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  ecommerce:{title:'Online Store',sub:'Everything you need to sell online, and nothing you do not.',body:`<div class="sm-section"><div class="sm-section-h">The possibilities</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Product Store</div><div class="sm-card-d">Physical or digital products with cart, checkout, order management, and payment processing built in.</div></div><div class="sm-card"><div class="sm-card-h">Subscription Store</div><div class="sm-card-d">Recurring billing, subscriber management, and gated content for businesses with ongoing delivery models.</div></div><div class="sm-card"><div class="sm-card-h">Fashion Store</div><div class="sm-card-d">Size, variant, and inventory management with a clean storefront that reflects your brand properly.</div></div><div class="sm-card"><div class="sm-card-h">Digital Products</div><div class="sm-card-d">Instant delivery of files, courses, or templates. Gated behind payment with automatic access on checkout.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider before we build</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">Payment infrastructure</div><div class="sm-c-d">Stripe for international, Paystack for local markets. We integrate both where needed so no customer is blocked at checkout.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">Inventory and orders</div><div class="sm-c-d">Product variants, stock levels, order notifications, and fulfilment workflows designed to scale as your volume grows.</div></div></div><div class="sm-c-item"><div class="sm-c-num">03</div><div><div class="sm-c-t">Conversion architecture</div><div class="sm-c-d">Cart abandonment, checkout flow, and product page structure optimised to reduce drop-off at every step.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  landing:{title:'Landing Page',sub:'One page. One goal. Built to convert.',body:`<div class="sm-section"><div class="sm-section-h">What a great landing page does</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Lead capture</div><div class="sm-card-d">Collects emails, phone numbers, or enquiries. Connected to your CRM or email system from day one.</div></div><div class="sm-card"><div class="sm-card-h">Product launch</div><div class="sm-card-d">Announces your product, builds anticipation, and collects waitlist signups before launch day.</div></div><div class="sm-card"><div class="sm-card-h">Campaign page</div><div class="sm-card-d">Dedicated page for an ad campaign or promotion, optimised for that specific audience and intent.</div></div><div class="sm-card"><div class="sm-card-h">Event registration</div><div class="sm-card-d">Online or in-person event signups with confirmation emails, calendar links, and attendee management.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider before we build</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">The single action</div><div class="sm-c-d">Every element on the page exists to move the visitor toward one action. We remove everything that competes with it.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">Load speed</div><div class="sm-c-d">Every second of load time costs conversions. We build landing pages that load under two seconds on mobile.</div></div></div><div class="sm-c-item"><div class="sm-c-num">03</div><div><div class="sm-c-t">Copy and messaging</div><div class="sm-c-d">We write or review the copy to ensure it speaks to the reader's desire, not just the client's offering.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  webapp:{title:'MVP Web Application',sub:'Your idea, live and working in 3 to 4 weeks.',body:`<div class="sm-section"><div class="sm-section-h">The kinds of apps we build</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Founder platforms</div><div class="sm-card-d">Cohort tools, bootcamps, and mentorship platforms with user management, progress tracking, and admin dashboards.</div></div><div class="sm-card"><div class="sm-card-h">B2B tools</div><div class="sm-card-d">Internal and client-facing tools that automate workflows, manage data, and replace expensive off-the-shelf software.</div></div><div class="sm-card"><div class="sm-card-h">Marketplaces</div><div class="sm-card-d">Two-sided platforms connecting buyers and sellers, with profiles, listings, ratings, and secure payments.</div></div><div class="sm-card"><div class="sm-card-h">Community platforms</div><div class="sm-card-d">Membership sites and community hubs with gated content, roles, and engagement features built in.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider before we build</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">What is the V1 really?</div><div class="sm-c-d">We scope ruthlessly. A good MVP is a complete, working version of your core idea and nothing else.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">Architecture for scale</div><div class="sm-c-d">We build on Next.js, PostgreSQL, and Vercel because these scale without re-architecting when your users grow.</div></div></div><div class="sm-c-item"><div class="sm-c-num">03</div><div><div class="sm-c-t">Security and auth</div><div class="sm-c-d">Role-based access, secure authentication, and proper data handling built in from the start.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  saas:{title:'SaaS Platform',sub:'Every layer of a real software business, built properly.',body:`<div class="sm-section"><div class="sm-section-h">What a complete SaaS platform includes</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Subscription billing</div><div class="sm-card-d">Stripe integration with monthly, annual, and usage-based plans. Upgrade, downgrade, and cancellation flows handled cleanly.</div></div><div class="sm-card"><div class="sm-card-h">Multi-tenant architecture</div><div class="sm-card-d">Each customer gets their own isolated workspace. Data separated at the database level, not just application level.</div></div><div class="sm-card"><div class="sm-card-h">Admin panel</div><div class="sm-card-d">A full back-office dashboard to manage users, view revenue, handle support, and monitor product usage.</div></div><div class="sm-card"><div class="sm-card-h">Onboarding flows</div><div class="sm-card-d">Step-by-step onboarding that gets users to their first value moment quickly, reducing churn from the start.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider before we build</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">Revenue architecture</div><div class="sm-c-d">Pricing tiers, feature gating, and trial logic designed to maximise conversion from free to paid.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">Infrastructure costs</div><div class="sm-c-d">We model your infrastructure spend at 10, 100, and 1,000 users so you know your margins before we write a line of code.</div></div></div><div class="sm-c-item"><div class="sm-c-num">03</div><div><div class="sm-c-t">The growth path</div><div class="sm-c-d">V2 features, integration roadmap, and the API strategy that will let you build on top of what we deliver.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  mobile:{title:'Mobile Application',sub:'iOS and Android. One codebase. Properly built.',body:`<div class="sm-section"><div class="sm-section-h">The kinds of mobile apps we build</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Fintech apps</div><div class="sm-card-d">Wallets, payment apps, and financial tools with secure transaction flows, biometric auth, and real-time updates.</div></div><div class="sm-card"><div class="sm-card-h">E-commerce apps</div><div class="sm-card-d">Native mobile shopping with product browsing, cart, checkout, and push notifications for offers and order updates.</div></div><div class="sm-card"><div class="sm-card-h">Productivity apps</div><div class="sm-card-d">Task managers, trackers, and workspace tools designed for the mobile context, fast and frictionless.</div></div><div class="sm-card"><div class="sm-card-h">Community apps</div><div class="sm-card-d">Social feeds, messaging, member directories, and events for communities that need a native mobile experience.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider before we build</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">iOS vs Android vs both</div><div class="sm-c-d">React Native delivers native performance on both platforms from a single codebase. We advise on where to launch first.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">App store submission</div><div class="sm-c-d">We handle the Apple App Store and Google Play submission process, including compliance and listing copy.</div></div></div><div class="sm-c-item"><div class="sm-c-num">03</div><div><div class="sm-c-t">Push notifications and offline</div><div class="sm-c-d">Notification strategy and offline capability built in where relevant, because mobile users expect both.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  seo:{title:'Copywriting and SEO',sub:'Words that sell. Pages that rank.',body:`<div class="sm-section"><div class="sm-section-h">What this covers</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Website copywriting</div><div class="sm-card-d">Homepage, services, about, and contact pages written to convert. Every word earns its place.</div></div><div class="sm-card"><div class="sm-card-h">Blog content</div><div class="sm-card-d">Articles written for both search engines and humans. Properly researched, well-structured, and genuinely useful.</div></div><div class="sm-card"><div class="sm-card-h">SEO strategy</div><div class="sm-card-d">Keyword research, on-page optimisation, technical SEO audit, and a content plan that builds authority over time.</div></div><div class="sm-card"><div class="sm-card-h">Email newsletters</div><div class="sm-card-d">Regular newsletters that keep your audience engaged, build trust, and convert readers into buyers.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">Reader intent</div><div class="sm-c-d">We write for the person reading, not the search engine crawling. Copy that sounds human converts better.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">Long-term authority</div><div class="sm-c-d">SEO compounds. We build a content strategy designed to grow over 6 to 12 months, not chase short-term tricks.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  revamp:{title:'Website Redesign',sub:'Your current site is costing you clients. We fix that.',body:`<div class="sm-section"><div class="sm-section-h">What a redesign involves</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Full redesign</div><div class="sm-card-d">New design, new structure, new copy, new tech stack. We rebuild from scratch using everything we know about conversion.</div></div><div class="sm-card"><div class="sm-card-h">Visual refresh</div><div class="sm-card-d">Same structure, new look. Updated typography, colours, and layout to bring your existing site into 2026.</div></div><div class="sm-card"><div class="sm-card-h">Performance audit</div><div class="sm-card-d">We identify every speed, SEO, and UX issue on your current site and deliver a prioritised action list.</div></div><div class="sm-card"><div class="sm-card-h">Mobile redesign</div><div class="sm-card-d">Your existing site rebuilt mobile-first. Over 70% of your visitors are already on a phone.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we look at first</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">Why people leave</div><div class="sm-c-d">We analyse your analytics before touching a pixel. Bounce rate, time on page, and exit patterns tell us what is broken.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">The conversion path</div><div class="sm-c-d">Where do you want visitors to go? We rebuild the information architecture around that goal.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  ai:{title:'AI-Powered Features',sub:'Real intelligence. Not gimmicks.',body:`<div class="sm-section"><div class="sm-section-h">What we add to products</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Content generation</div><div class="sm-card-d">AI that writes drafts or generates structured content from a user prompt, integrated into your product interface.</div></div><div class="sm-card"><div class="sm-card-h">Voice to action</div><div class="sm-card-d">Users speak or record a voice note. AI transcribes, interprets, and converts it into structured data or a course outline.</div></div><div class="sm-card"><div class="sm-card-h">Smart search</div><div class="sm-card-d">Semantic search that understands intent, not just keywords. Finds the right content even when users cannot name it.</div></div><div class="sm-card"><div class="sm-card-h">Automated workflows</div><div class="sm-card-d">Trigger-based automations that respond to user actions and reduce the manual work your team does every day.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">Which model fits</div><div class="sm-c-d">Claude, GPT-4o, and Grok each have different strengths. We choose based on cost, latency, and what your use case needs.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">User experience first</div><div class="sm-c-d">AI features should feel magical, not technical. We design the UX so users benefit without needing to understand how it works.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  productdesign:{title:'Product Design',
+  sub:'Beautiful. Functional. Ready to build.',
+  body:`<div class="sm-section"><div class="sm-section-h">What we design</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">App UI Design</div><div class="sm-card-d">Full mobile and web application interfaces. Every screen, every state, every interaction mapped and designed before development begins.</div></div><div class="sm-card"><div class="sm-card-h">Design Systems</div><div class="sm-card-d">A reusable component library in Figma. Buttons, forms, cards, type scales   everything your team needs to build consistently at speed.</div></div><div class="sm-card"><div class="sm-card-h">Website Design</div><div class="sm-card-d">High-fidelity mockups for marketing sites and landing pages. Pixel-perfect designs delivered with developer handoff notes.</div></div><div class="sm-card"><div class="sm-card-h">User Experience</div><div class="sm-card-d">User flows, wireframes, and prototypes that map the full journey from arrival to conversion, before a line of code is written.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">Function before form</div><div class="sm-c-d">Beautiful is not enough. Every design decision is tested against how the user actually moves through the product.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">Developer-ready output</div><div class="sm-c-d">Figma files delivered with proper layers, components, spacing tokens, and export settings so development is smooth.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  productdev:{title:'Product Development',
+  sub:'From idea to live product. One studio.',
+  body:`<div class="sm-section"><div class="sm-section-h">What end-to-end development covers</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Discovery and strategy</div><div class="sm-card-d">We map the user journey, define the MVP scope, and choose the right tech stack before we touch Figma or write a line of code.</div></div><div class="sm-card"><div class="sm-card-h">Design and prototype</div><div class="sm-card-d">Full UI/UX design, interactive prototype, and stakeholder sign-off before development begins. No surprises midway.</div></div><div class="sm-card"><div class="sm-card-h">Build and test</div><div class="sm-card-d">Full-stack development with live staging access from week one. Rigorous testing across devices, browsers, and user scenarios.</div></div><div class="sm-card"><div class="sm-card-h">Launch and support</div><div class="sm-card-d">Live on your domain with full code handover, documentation, and 30 days of post-launch support included.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">What is the real V1?</div><div class="sm-c-d">Most founders want to build everything. We help you identify the smallest version that proves the idea and starts generating feedback.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">Build for scale</div><div class="sm-c-d">Architecture decisions made in week one define your ceiling in year three. We build with the right foundations from the start.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  presentation:{title:'Pitch Deck and Presentation Design',
+  sub:'Decks that make people lean forward.',
+  body:`<div class="sm-section"><div class="sm-section-h">What we design</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Investor pitch decks</div><div class="sm-card-d">10 to 15 slides that tell your story, prove your market, and make the ask clearly. Designed to survive the first 60 seconds.</div></div><div class="sm-card"><div class="sm-card-h">Sales decks</div><div class="sm-card-d">Presentations that close enterprise or SME deals. Clear problem, clear solution, clear next step. No slide left to chance.</div></div><div class="sm-card"><div class="sm-card-h">Brand and company decks</div><div class="sm-card-d">Your company story, values, and positioning in a deck you can send to partners, press, or potential hires.</div></div><div class="sm-card"><div class="sm-card-h">Marketing presentations</div><div class="sm-card-d">Campaign launches, product announcements, conference talks   designed to hold a room and move an audience.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">Narrative first</div><div class="sm-c-d">A deck is a story. We map the narrative arc before we open Figma. The slides follow the logic, not the other way around.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">Two deliverables always</div><div class="sm-c-d">You get a presentation-ready PDF and an editable PowerPoint or Google Slides file. One to send, one to update yourself.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`}
+,
+  productdesign:{title:'Product Design',sub:'Beautiful. Functional. Ready to build.',body:`<div class="sm-section"><div class="sm-section-h">What we design</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">App UI Design</div><div class="sm-card-d">Full mobile and web application interfaces. Every screen, every state, every interaction mapped and designed before development begins.</div></div><div class="sm-card"><div class="sm-card-h">Design Systems</div><div class="sm-card-d">A reusable component library in Figma. Buttons, forms, cards, type scales   everything your team needs to build consistently at speed.</div></div><div class="sm-card"><div class="sm-card-h">Website Design</div><div class="sm-card-d">High-fidelity mockups for marketing sites and landing pages. Pixel-perfect designs delivered with developer handoff notes.</div></div><div class="sm-card"><div class="sm-card-h">User Experience</div><div class="sm-card-d">User flows, wireframes, and prototypes that map the full journey from arrival to conversion, before a line of code is written.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">Function before form</div><div class="sm-c-d">Beautiful is not enough. Every design decision is tested against how the user actually moves through the product.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">Developer-ready output</div><div class="sm-c-d">Figma files delivered with proper layers, components, spacing tokens, and export settings so development is smooth.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  productdev:{title:'Product Development',sub:'From idea to live product. One studio.',body:`<div class="sm-section"><div class="sm-section-h">What end-to-end development covers</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Discovery and strategy</div><div class="sm-card-d">We map the user journey, define the MVP scope, and choose the right tech stack before we touch Figma or write a line of code.</div></div><div class="sm-card"><div class="sm-card-h">Design and prototype</div><div class="sm-card-d">Full UI/UX design, interactive prototype, and stakeholder sign-off before development begins. No surprises midway.</div></div><div class="sm-card"><div class="sm-card-h">Build and test</div><div class="sm-card-d">Full-stack development with live staging access from week one. Rigorous testing across devices, browsers, and user scenarios.</div></div><div class="sm-card"><div class="sm-card-h">Launch and support</div><div class="sm-card-d">Live on your domain with full code handover, documentation, and 30 days of post-launch support included.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">What is the real V1?</div><div class="sm-c-d">Most founders want to build everything. We help you identify the smallest version that proves the idea and starts generating feedback.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">Build for scale</div><div class="sm-c-d">Architecture decisions made in week one define your ceiling in year three. We build with the right foundations from the start.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`},
+  presentation:{title:'Pitch Deck and Presentation Design',sub:'Decks that make people lean forward.',body:`<div class="sm-section"><div class="sm-section-h">What we design</div><div class="sm-grid"><div class="sm-card"><div class="sm-card-h">Investor pitch decks</div><div class="sm-card-d">10 to 15 slides that tell your story, prove your market, and make the ask clearly. Designed to survive the first 60 seconds.</div></div><div class="sm-card"><div class="sm-card-h">Sales decks</div><div class="sm-card-d">Presentations that close enterprise or SME deals. Clear problem, clear solution, clear next step. No slide left to chance.</div></div><div class="sm-card"><div class="sm-card-h">Brand and company decks</div><div class="sm-card-d">Your company story, values, and positioning in a deck you can send to partners, press, or potential hires.</div></div><div class="sm-card"><div class="sm-card-h">Marketing presentations</div><div class="sm-card-d">Campaign launches, product announcements, conference talks   designed to hold a room and move an audience.</div></div></div></div><div class="sm-section"><div class="sm-section-h">What we consider</div><div class="sm-consider"><div class="sm-c-item"><div class="sm-c-num">01</div><div><div class="sm-c-t">Narrative first</div><div class="sm-c-d">A deck is a story. We map the narrative arc before we open Figma. The slides follow the logic, not the other way around.</div></div></div><div class="sm-c-item"><div class="sm-c-num">02</div><div><div class="sm-c-t">Two deliverables always</div><div class="sm-c-d">You get a presentation-ready PDF and an editable PowerPoint or Google Slides file. One to send, one to update yourself.</div></div></div></div></div><button class="sm-cta" onclick="closeModal();go('contact')">Start with a free call</button>`}
+};
+function openModal(id){
+  const d=modalData[id];if(!d)return;
+  const h=document.getElementById('sm-h');
+  const s=document.getElementById('sm-sub');
+  const b=document.getElementById('sm-body');
+  const modal=document.getElementById('smodal');
+  if(!h||!s||!b||!modal)return;
+  h.textContent=d.title;
+  s.textContent=d.sub;
+  b.innerHTML=d.body;
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('smodal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('smodal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+
+// Sample viewer removed for performance
+
+function openSample(id){ go('services'); }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var sm = document.getElementById('sampleModal');
+  if(sm) sm.addEventListener('click', function(e) { if(e.target === this) closeSample(); });
+  var sv = document.getElementById('smodal');
+  if(sv) sv.addEventListener('click', function(e) { if(e.target === this) closeModal(); });
+});
+
+</script>
+</body>
+</html>
