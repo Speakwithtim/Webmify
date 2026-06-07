@@ -1495,15 +1495,20 @@ async function loadBlogPosts(){
   var grid=document.getElementById('posts-grid');
   var feat=document.getElementById('featured-post');
   if(!grid)return;
-  try{
-    var res=await fetch('https://webmify-studio.vercel.app/api/posts');
-    if(!res.ok)throw new Error('fail');
-    _allPosts=await res.json();if(!Array.isArray(_allPosts))_allPosts=[];
-    renderBlogPosts(_allPosts);
-  }catch(e){
-    grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:56px 0;color:#b4b4a8"><div style="font-family:Georgia,serif;font-size:20px;font-weight:300;margin-bottom:8px">No posts yet.</div><p style="font-size:13px">Check back soon.</p></div>';
-    if(feat)feat.style.display='none';
+  var urls=['https://studio.webmify.site/api/posts','https://webmify-studio.vercel.app/api/posts'];
+  for(var u=0;u<urls.length;u++){
+    try{
+      var res=await fetch(urls[u]);
+      if(!res.ok)continue;
+      var data=await res.json();
+      if(!Array.isArray(data))continue;
+      _allPosts=data;
+      renderBlogPosts(_allPosts);
+      return;
+    }catch(e){continue;}
   }
+  grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:56px 0;color:#b4b4a8"><div style="font-family:Georgia,serif;font-size:20px;font-weight:300;margin-bottom:8px">No posts yet.</div><p style="font-size:13px">Check back soon for insights on building and growing online.</p></div>';
+  if(feat)feat.style.display='none';
 }
 
 function makeFeatCard(post){
