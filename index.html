@@ -1519,8 +1519,8 @@ function makeFeatCard(post){
   a.className='feat-link';
   a.style.cssText='display:grid;grid-template-columns:1fr 1fr;gap:0;';
   var left=document.createElement('div');
-  left.style.cssText='background:linear-gradient(135deg,var(--bg2),var(--bg3));display:flex;align-items:center;justify-content:center;padding:48px;min-height:220px;';
-  left.innerHTML='<svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="8" y="8" width="48" height="48" rx="8" stroke="var(--ink)" stroke-width="1.5" opacity=".2"/><path d="M20 32h24M20 24h24M20 40h16" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" opacity=".2"/></svg>';
+  left.style.cssText='background:linear-gradient(135deg,var(--bg2),var(--bg3));display:flex;align-items:center;justify-content:center;min-height:220px;overflow:hidden;';
+  if(post.cover_image){var ci=document.createElement('img');ci.src=post.cover_image;ci.alt=post.title;ci.style.cssText='width:100%;height:100%;object-fit:cover;';left.appendChild(ci);}else{left.innerHTML='<svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="8" y="8" width="48" height="48" rx="8" stroke="var(--ink)" stroke-width="1.5" opacity=".2"/><path d="M20 32h24M20 24h24M20 40h16" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" opacity=".2"/></svg>';}
   var right=document.createElement('div');
   right.style.cssText='padding:36px;';
   var badges=document.createElement('div');
@@ -1551,8 +1551,8 @@ function makePostCard(post,i){
   a.target='_blank';
   a.className='post-link';
   var thumb=document.createElement('div');
-  thumb.style.cssText='height:140px;display:flex;align-items:center;justify-content:center;background:'+grads[i%grads.length]+';';
-  thumb.innerHTML='<svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="4" y="4" width="28" height="28" rx="4" stroke="var(--ink)" stroke-width="1.2" opacity=".25"/><path d="M10 18h16M10 13h16M10 23h10" stroke="var(--ink)" stroke-width="1.2" stroke-linecap="round" opacity=".25"/></svg>';
+  thumb.style.cssText='height:140px;display:flex;align-items:center;justify-content:center;background:'+grads[i%grads.length]+';overflow:hidden;';
+  if(post.cover_image){var tci=document.createElement('img');tci.src=post.cover_image;tci.alt=post.title;tci.style.cssText='width:100%;height:140px;object-fit:cover;';thumb.appendChild(tci);}else{thumb.innerHTML='<svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="4" y="4" width="28" height="28" rx="4" stroke="var(--ink)" stroke-width="1.2" opacity=".25"/><path d="M10 18h16M10 13h16M10 23h10" stroke="var(--ink)" stroke-width="1.2" stroke-linecap="round" opacity=".25"/></svg>';}
   var body=document.createElement('div');
   body.style.cssText='padding:22px;flex:1;display:flex;flex-direction:column;';
   var meta=document.createElement('div');
